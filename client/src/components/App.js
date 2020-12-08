@@ -12,6 +12,7 @@ import StudentLogin from './pages/Student-login/Student-login'
 import StudentProfile from './pages/Student-profile/Student-profile'
 
 
+
 class App extends Component {
 
   constructor() {

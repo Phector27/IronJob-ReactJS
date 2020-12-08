@@ -1,7 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700;900&display=swap');
+
 body {
-  font-family: sans-serif;
+  font-family: montserrat;
   font-weight: 200;
-  background-color: bisque;
+  background-color: #ebebeb;
+}
+
+.picaporte img{
+  width: 500px;
+}
+
+.picaporte3 h1 {
+  position: absolute;
+  font-weight: 900;
+  margin: 400px;
+  color: #ebebeb;
+
+}
+
+.picaporte3 h2 {
+  position: absolute;
+  font-style: italic;
+  font-size: 2.1rem;
+  font-weight: 300;
+  margin: 470px 200px 470px 200px;
+  color: #ebebeb;
+  text-shadow: 20rem #ebebeb;
+  
+
 }
 
 h1, h2, h3 {
