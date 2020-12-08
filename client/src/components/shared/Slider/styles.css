@@ -26,6 +26,7 @@ button:hover {
           filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
 }
 
+
 .wrapper {
   max-width: 1335px;
   box-sizing: border-box;

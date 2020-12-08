@@ -6,19 +6,19 @@ import "./styles.css";
 
 const content = [
   {
-    title: "VER QUE TITULO PONEMOS AQUÍ SLIDER 1-",
+    title: "UN MAR LLENO DE TALENTO",
     description:
-      "Tenemos que añadir una descripción aquí.",
-    button: "VER QUE PONEMOS",
+      "La plataforma perfecta para acceder al mejor talento tecnologico nacional",
+    button: "REGISTRA TU EMPRESA",
     image: "https://images.unsplash.com/photo-1536940135352-b4b3875df888?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
     user: "José Dorado",
     userProfile: "https://i.imgur.com/JSW6mEk.png",
     linkedIn: "https://www.linkedin.com/in/jose-dorado/"
   },
   {
-    title: "VER QUE TITULO PONEMOS AQUÍ SLIDER 2-",
-    description: "Tenemos que añadir una descripción aquí.",
-    button: "VER QUE PONEMOS",
+    title: "IRONJOB, TU MEJOR ESCAPARATE",
+    description: "El punto de inicio de tu futuro",
+    button: "REGISTRATE COMO ALUMNO",
     image: "https://images.unsplash.com/photo-1504717052790-edee6b85829b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1974&q=80",
     user: "Héctor Carramiñana",
     userProfile: "https://media-exp1.licdn.com/dms/image/C4D03AQE9uXjTtnhLDQ/profile-displayphoto-shrink_200_200/0?e=1608163200&v=beta&t=Mn9jOQrdsbNMHyihJYAhqS95VToo046ZyuD8A6W3STE",
@@ -46,7 +46,7 @@ const Slider1 = () => (
         >
           <div className="inner">
             <h1>{item.title}</h1>
-            <p>{item.description}</p>
+            <p style={{fontSize: '1.3rem'}}>{item.description}</p>
             <button>{item.button}</button>
           </div>
         
