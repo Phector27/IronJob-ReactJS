@@ -71,3 +71,11 @@ h1, h2, h3 {
   border-radius: 100%;
   vertical-align: middle;
 }
+
+.student-profile img {
+  width: 100px;
+  height: 100px;
+  display: block;
+  justify-content: center;
+  margin-bottom: 20px;
+}

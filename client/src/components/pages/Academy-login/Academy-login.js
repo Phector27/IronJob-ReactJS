@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import AuthService from '../../../service/auth.service'
 import { Container, Button, Form } from 'react-bootstrap'
 
-class CompanyLogin extends Component {
+class AcademyLogin extends Component {
 
     constructor() {
         super()
@@ -23,7 +23,7 @@ class CompanyLogin extends Component {
             .login(this.state)
             .then(theLoggedInUser => {
                 this.props.storeUser(theLoggedInUser.data)
-                this.props.history.push('/company/offers') // Propiedad recogida en react router dom, pasadas a las props de singup en App.js
+                this.props.history.push('/academy/control') // Propiedad recogida en react router dom, pasadas a las props de singup en App.js
                 // Si estuviesemos en un componente funcional y no de clase haríamos props.history.push
             })
             .catch(err => console.log(err))
@@ -34,7 +34,7 @@ class CompanyLogin extends Component {
         return (
 
             <Container className="form">
-                        <h1>Login</h1>
+                        <h1>Iron-Login</h1>
                         <hr />
                         <Form onSubmit={this.handleSubmit}>
                             <Form.Group controlId="username">
@@ -52,4 +52,4 @@ class CompanyLogin extends Component {
     }
 }
 
-export default CompanyLogin
+export default AcademyLogin

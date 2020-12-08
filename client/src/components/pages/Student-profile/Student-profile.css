@@ -1,0 +1,27 @@
+.student-profile {
+    margin-top: 100px;
+    text-align: center;
+  }
+
+.video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 75px;
+    margin-bottom: 75px;
+}
+
+.hero-profile {
+    margin-top: 0px;
+}
+
+.presentacion{
+    margin-bottom: 75px;
+}
+
+.textarea {
+    background: transparent;
+    border: 1px dashed gray;
+    width: 100%;
+    border-radius: 30px;
+}
