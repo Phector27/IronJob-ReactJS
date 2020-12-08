@@ -1,0 +1,27 @@
+.offer-card {
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.strong {
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+h1 {
+    text-align: center;
+}
+
+.expand {
+    display: flex;
+    justify-content: space-between;
+}
+
+.offer-title {
+    font-weight: 800;
+    font-size: 1.3em;
+}
+
+.offer-list {
+    margin-top: 100px;
+  }
