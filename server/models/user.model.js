@@ -7,13 +7,29 @@ const userSchema = new Schema({
     type: String,
     unique: true,
   },
-    name: String,
+  name: String,
   profilePhoto: {
     type: String,
     default: './images/profiledefault.png'
   },
-    password: String,
-    role: {
+  password: String,
+  githubProfile: {
+    type: String,
+    default: 'https://github.com'
+  },
+  linkedInProfile: {
+    type: String,
+    default: 'https://linkedin.com'
+  },
+  videoProfile: {
+    type: String,
+    default: 'https://www.youtube.com/watch?v=KVakLLMBQxg'
+  },
+  descriptionUser: {
+    type: String,
+    default: ''
+  },
+  role: {
       type: String,
       enum: ['IRONHACK-RECRUITER', 'BUSINESS-RECRUITER', 'Student', 'Guest', 'Inactive'],
       default: 'Guest',

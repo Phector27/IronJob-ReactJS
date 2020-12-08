@@ -23,7 +23,7 @@ class StudentLogin extends Component {
             .login(this.state)
             .then(theLoggedInUser => {
                 this.props.storeUser(theLoggedInUser.data)
-                this.props.history.push('/student-profile') // Propiedad recogida en react router dom, pasadas a las props de singup en App.js
+                this.props.history.push('/student/profile') // Propiedad recogida en react router dom, pasadas a las props de singup en App.js
                 // Si estuviesemos en un componente funcional y no de clase haríamos props.history.push
             })
             .catch(err => console.log(err))
