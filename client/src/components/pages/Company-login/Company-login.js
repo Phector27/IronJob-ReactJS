@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import AuthService from '../../../service/auth.service'
 import { Container, Button, Form } from 'react-bootstrap'
 
-
-class Login extends Component {
+class CompanyLogin extends Component {
 
     constructor() {
         super()
@@ -53,4 +52,4 @@ class Login extends Component {
     }
 }
 
-export default Login
+export default CompanyLogin

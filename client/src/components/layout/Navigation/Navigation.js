@@ -51,8 +51,8 @@ class NavbarPage extends Component {
               }
             </NavDropdown>
             <NavDropdown title="Student" id="basic-nav-dropdown">
-              <NavDropdown.Item><Link to="/company" className="link">Tus Ofertas</Link></NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">En construcción</NavDropdown.Item>
+              <NavDropdown.Item><Link to="/student-login" className="link">Iniciar sesión</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to="/logout" className="link" onClick={this.logOut}>Cerrar sesión</Link></NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">En construcción</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">En construcción</NavDropdown.Item>

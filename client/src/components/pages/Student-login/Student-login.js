@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import AuthService from '../../../service/auth.service'
 import { Container, Button, Form } from 'react-bootstrap'
 
-
-class Signup extends Component {
+class StudentLogin extends Component {
 
     constructor() {
         super()
@@ -13,7 +12,6 @@ class Signup extends Component {
             name: ''
         }
         this.authService = new AuthService()
-        //__Aquí nos hemos quedado
     }
 
     handleInputChange = e => this.setState({ [e.target.name]: e.target.value })
@@ -22,8 +20,12 @@ class Signup extends Component {
         e.preventDefault()
 
         this.authService
-            .signup(this.state.username, this.state.password, this.state.name)
-            .then(theLoggedInUser => console.log(theLoggedInUser))
+            .login(this.state)
+            .then(theLoggedInUser => {
+                this.props.storeUser(theLoggedInUser.data)
+                this.props.history.push('/student-profile') // Propiedad recogida en react router dom, pasadas a las props de singup en App.js
+                // Si estuviesemos en un componente funcional y no de clase haríamos props.history.push
+            })
             .catch(err => console.log(err))
     }
     
@@ -31,8 +33,8 @@ class Signup extends Component {
     render() {
         return (
 
-            <Container>
-                        <h1>Signup</h1>
+            <Container className="form">
+                        <h1>Login</h1>
                         <hr />
                         <Form onSubmit={this.handleSubmit}>
                             <Form.Group controlId="username">
@@ -43,17 +45,11 @@ class Signup extends Component {
                                 <Form.Label>Contraseña</Form.Label>
                                 <Form.Control type="password" name="password" value={this.state.password} onChange={this.handleInputChange} />
                             </Form.Group>
-                            
-                            <Form.Group controlId="name">
-                                <Form.Label>Nombre / Razón social</Form.Label>
-                                <Form.Control type="text" name="name" value={this.state.name} onChange={this.handleInputChange} />
-                            </Form.Group>
-                            <small className="form-text text-muted"><i>En caso de alumnos indicar nombre completo y apellidos.</i></small><hr />
-                            <Button variant="dark btn-block" type="submit">Signup</Button>
+                            <Button variant="dark btn-block" type="submit">Login</Button>
                         </Form>
             </Container>
         )
     }
 }
 
-export default Signup
+export default StudentLogin

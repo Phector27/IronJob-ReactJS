@@ -1,15 +1,12 @@
 const express = require('express')
 const router = express.Router()
-const mongoose = require('mongoose')
+// const mongoose = require('mongoose')
 
 const Offer = require('../models/offer.model')
 
 
 // const isLogged = (req, res, next) => req.isAuthenticated() ? next() : res.render('company/company-login', { errorMsg: 'Acceso denegado. Haz login para acceder a esta zona de la web.' })
 // const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(req.user.role) ? next() : res.render('company/company-login', { errorMsg: 'Acceso denegado. No tienes permisos para ver esta zona de la web. Por favor, contacta con un administrador de IronHack para que modifique tus permisos.' })
-
-
-// router.get('/', (req, res) => res.render('company/company-index'))
 
 
 router.get('/getAllOffers', (req, res) => {
@@ -46,19 +43,19 @@ router.delete('/delete/:offer_id', (req, res) => {
 })
 
 
-router.get('/getOneOffer/:offer_id', (req, res) => {
+// router.get('/getOneOffer/:offer_id', (req, res) => {
 
-    if (!mongoose.Types.ObjectId.isValid(req.params.offer_id)) {
-        res.status(404).json({ message: 'Invalid ID' })
-        return
-    }
+//     if (!mongoose.Types.ObjectId.isValid(req.params.offer_id)) {
+//         res.status(404).json({ message: 'Invalid ID' })
+//         return
+//     }
 
-    Offer
-        .findById(req.params.offer_id)
-        .then(response => res.json(response))
-        .catch(err => res.status(500).json(err))
+//     Offer
+//         .findById(req.params.offer_id)
+//         .then(response => res.json(response))
+//         .catch(err => res.status(500).json(err))
     
-})
+// })
 
 
 router.put('/editOffer/:offer_id', (req, res, next) => {

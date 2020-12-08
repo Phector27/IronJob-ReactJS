@@ -6,8 +6,10 @@ import NavbarPage from './layout/Navigation/Navigation'
 import OfferList from './pages/Offers-list/Offers-list'
 import Home from './pages/Home/Home'
 import Signup from './pages/Signup/Signup'
-import Login from './pages/Login/Login'
+import CompanyLogin from './pages/Company-login/Company-login'
 import AuthService from './../service/auth.service'
+import StudentLogin from './pages/Student-login/Student-login'
+import StudentProfile from './pages/Student-profile/Student-profile'
 
 
 class App extends Component {
@@ -38,9 +40,13 @@ class App extends Component {
           <Switch>
             <Route path="/" exact render={() => <Home />} />
             <Route path="/company" render={() => this.state.loggedInUser ? <OfferList loggedUser={this.state.loggedInUser}/> : <Redirect to="/" />} />
-            <Route path="/signup" render={props => <Signup storeUser={this.setTheUser} {...props} />} /> {/*Cogemos las props de react-router-don para poder redirigir*/}
-            <Route path="/login" render={props => <Login storeUser={this.setTheUser} {...props} />} /> {/*Cogemos las props de react-router-don para poder redirigir*/}
+            <Route path="/signup" render={props => <Signup storeUser={this.setTheUser} {...props} />} /> {/*Cogemos las props de react-router-dom para poder redirigir*/}
+            <Route path="/student-login" render={props => <StudentLogin storeUser={this.setTheUser} {...props} />} /> {/*Cogemos las props de react-router-dom para poder redirigir*/}
+            <Route path="/student-profile" render={() => this.state.loggedInUser ? <StudentProfile loggedUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
+            <Route path="/login" render={props => <CompanyLogin storeUser={this.setTheUser} {...props} />} /> {/*Cogemos las props de react-router-dom para poder redirigir*/}
             <Route path="/logout" render={() => <Redirect to="/" />} />
+
+
           </Switch>
         </main>
       </>

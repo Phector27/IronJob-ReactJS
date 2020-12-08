@@ -24,7 +24,7 @@ class Signup extends Component {
             .signup(this.state.username, this.state.password, this.state.name)
             .then(theLoggedInUser => {
                 this.props.storeUser(theLoggedInUser.data)
-                this.props.history.push('/company') // Propiedad recogida en react router dom, pasadas a las props de singup en App.js
+                this.props.history.push('/') // Propiedad recogida en react router dom, pasadas a las props de singup en App.js
                 // Si estuviesemos en un componente funcional y no de clase haríamos props.history.push
             })
             .catch(err => console.log(err))
