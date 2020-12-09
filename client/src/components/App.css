@@ -2,7 +2,7 @@
 
 body {
   font-family: montserrat;
-  font-weight: 200;
+  font-weight: 300;
   background-color: #ebebeb;
 }
 
@@ -12,7 +12,7 @@ body {
 
 .picaporte3 h1 {
   position: absolute;
-  font-weight: 900;
+  font-weight: 600;
   margin: 400px;
   color: #ebebeb;
 
@@ -78,4 +78,43 @@ h1, h2, h3 {
   display: block;
   justify-content: center;
   margin-bottom: 20px;
+}
+
+.btn-register {
+  -webkit-appearance: none;
+          appearance: none;
+  -webkit-filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
+          filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
+  -webkit-transition: all .5s ease;
+         filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
+  -webkit-transition: all .5s ease;
+          transition: all .5s ease;
+  border: none;
+  background: lightgray;
+  border-radius: 30px;
+  box-sizing: border-box;
+  padding: 5px 15px;
+  font-weight: 600;
+  cursor: cursor;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.twitter img {
+  width: 5%;
+}
+
+.instagram img {
+  width: 3.5%;
+  margin-right: 30px;
+  margin-left: 20px;
+}
+
+.facebook img{
+  width: 3%;
+}
+
+.RRSS {
+  text-align: center;
 }

@@ -48,7 +48,7 @@ class OfferList extends Component {
                 <Container className="offer-list">
                     <h1>Ofertas de trabajo publicadas</h1>
                     <hr /> <br />
-                    <Button className="btn btn-block" onClick={() => this.handleCreateModal(true)} variant="success" size="lg">Crear nueva oferta de empleo</Button>
+                    <Button className="btn btn-block" onClick={() => this.handleCreateModal(true)} variant="dark" size="lg">Crear nueva oferta de empleo</Button>
                     <br /> <br />
                     <Row>
                         {

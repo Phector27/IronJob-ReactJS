@@ -1,4 +1,6 @@
 import { Col, Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+
 
 
 const AllOfferCard = ({ title, study, name, location, style, description, email}) => {
@@ -12,6 +14,7 @@ const AllOfferCard = ({ title, study, name, location, style, description, email}
                     <Card.Text className="strong">{location} - {style}</Card.Text>
                     <Card.Text>{description}</Card.Text>
                     <Card.Text>Contacto: {email}</Card.Text>
+                    <Link className="btn btn-light btn-block" to="/student/apply">Me interesa</Link>
                 </Card.Body>
             </Card>
         </Col>

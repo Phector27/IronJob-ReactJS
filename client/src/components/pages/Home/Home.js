@@ -1,6 +1,7 @@
 import Slider1 from './../../shared/Slider/Slider'
 import { Parallax } from 'react-parallax'
 import { Container } from 'react-bootstrap'
+import Footer from './Footer-Home/Home-footer'
 import './home.css'
 
 
@@ -24,7 +25,7 @@ const Home = () => {
                 <div style={{ height: 800 }}></div>
                 
             </Parallax>
-                <div style={{ height: 1000 }}></div>
+            <Footer />
     </>
     )
 }
