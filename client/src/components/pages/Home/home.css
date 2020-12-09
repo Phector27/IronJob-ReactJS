@@ -1,7 +1,20 @@
 .motivational {
     text-align: center;
-    margin: 130px;
-    font-size: 50px;
+    margin: 100px 130px 100px 130px;
+    font-size: 40px;
     color: black;
-
+    font-style: oblique;
+    align-items: center;
+}
+.companyText {
+    margin: 50px;
+}
+.companyText p {
+    font-size: 1.2em;
+    font-weight: 300;
+    margin-right: 3rem;
+}
+.companyText img {
+    width: 50rem;
+    align-items: center;
 }

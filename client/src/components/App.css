@@ -2,32 +2,25 @@
 
 body {
   font-family: montserrat;
-  font-weight: 300;
-  background-color: #ebebeb;
+  font-weight: 200;
+  background-color: #EBEBEB;
+  overflow-x: hidden;
 }
-
 .picaporte img{
   width: 500px;
 }
-
 .picaporte3 h1 {
-  position: absolute;
-  font-weight: 600;
-  margin: 400px;
-  color: #ebebeb;
-
+  position: relative;
+  font-weight: 900;
+  margin-top: 400px;
+  color: #EBEBEB;
 }
-
 .picaporte3 h2 {
-  position: absolute;
+  position: relative;
   font-style: italic;
-  font-size: 2.1rem;
   font-weight: 300;
-  margin: 470px 200px 470px 200px;
-  color: #ebebeb;
-  text-shadow: 20rem #ebebeb;
-  
-
+  text-align: center;
+  color: #EBEBEB;
 }
 
 h1, h2, h3 {
