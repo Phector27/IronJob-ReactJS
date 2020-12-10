@@ -1,9 +1,6 @@
-import { Col, Card } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Col, Card, Button } from 'react-bootstrap'
 
-
-
-const AllOfferCard = ({ title, study, name, location, style, description, email}) => {
+const AllOfferCard = ({ title, study, name, location, style, description, email, handleModal }) => {
 
     return (
         <Col md={6}>
@@ -14,7 +11,9 @@ const AllOfferCard = ({ title, study, name, location, style, description, email}
                     <Card.Text className="strong">{location} - {style}</Card.Text>
                     <Card.Text>{description}</Card.Text>
                     <Card.Text>Contacto: {email}</Card.Text>
-                    <Link className="btn btn-light btn-block" to="/student/apply">Me interesa</Link>
+                    
+                        <Button className="btn btn-md btn-block" variant="dark" onClick={() => handleModal()}>Me interesa</Button>
+                
                 </Card.Body>
             </Card>
         </Col>

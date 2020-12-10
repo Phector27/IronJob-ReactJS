@@ -4,8 +4,12 @@ body {
   font-family: montserrat;
   font-weight: 200;
   background-color: #EBEBEB;
-  overflow-x: hidden;
 }
+
+.logo-container img{
+  max-height: 40px;
+}
+
 .picaporte img{
   width: 500px;
 }
@@ -34,6 +38,30 @@ h1, h2, h3 {
   text-transform: none;
 }
 
+.btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.contactUs {
+  margin: 20px;
+  border-radius: 20px;
+}
+
+.fieldsapply {
+  margin-top: 10px;
+}
+
+.form-control {
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.btn-apply {
+  border-radius: 20px;
+}
+
 .slider {
   width: 100vw;
 }
@@ -42,7 +70,7 @@ h1, h2, h3 {
   padding: 15px 40px 10px 40px;
   padding-bottom: 12px;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   transition: all .8s;
 }
 .menu img {

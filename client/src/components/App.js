@@ -14,7 +14,7 @@ import AllOffers from './pages/Student-profile/All-offers/All-offers'
 import AcademyLogin from './pages/Academy-login/Academy-login'
 import UsersList from './pages/Users-list/Users-list'
 import AcademyOffers from './pages/Academy-offers/Academy-offers'
-import ApplyOffer from './pages/Student-profile/Apply/Student-apply-offer'
+import ApplyOffer from './pages/Student-profile/Student-apply-offer'
 
 
 

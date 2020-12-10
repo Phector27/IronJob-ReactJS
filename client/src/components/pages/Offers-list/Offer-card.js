@@ -1,6 +1,5 @@
 import { Col, Card, Button } from 'react-bootstrap'
 
-
 const OfferCard = ({ title, study, name, location, style, description, email, deleteElement, handleModal }) => {
 
     return (
