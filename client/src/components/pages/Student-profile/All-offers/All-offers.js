@@ -45,6 +45,7 @@ class AllOffers extends Component {
                     </Row>
                 </Container>
 
+                {/* PONER X */}
                 <Modal className="modal-create" size="lg" show={this.state.showApplyModal} onHide={() => this.handleApplyModal(false)}>
                     <Modal.Body>
                         <ApplyForm closeModal={() => this.handleApplyModal(false)} offer={this.state.offerToApply} />
