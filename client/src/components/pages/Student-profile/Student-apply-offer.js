@@ -6,7 +6,7 @@ class ApplyOffer extends Component {
 
     render() {
         return (
-            <ApplyForm />
+            <ApplyForm loggedUser={this.state.loggedInUser}/>
         )
     }
 }

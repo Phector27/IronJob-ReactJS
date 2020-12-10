@@ -89,11 +89,12 @@ class NavbarPage extends Component {
             :
             <>
               <Nav className="ml-auto" style={{marginRight: '30px'}}>
-                <Link className="ml-auto btn-register" style={{fontWeight: '300', textDecoration: 'none', color: 'black', textTransform: 'none'}} to="/signup">Regístrate</Link>
-                <NavDropdown className="btn-register" style={{ textDecoration: 'none', color: 'black', textTransform: 'none'}} title="Entrar" id="basic-nav-dropdown">
+                <NavDropdown style={{ textDecoration: 'none', color: 'black', textTransform: 'none', fontWeight: 'bold', marginRight: '50px', fontSize: '1.3em'}} title="Acceder" id="basic-nav-dropdown">
                   <NavDropdown.Item><Link style={{textDecoration: 'none', color: 'black', textTransform: 'none'}} to="/company/login">Company</Link></NavDropdown.Item>
-                  <NavDropdown.Item><Link style={{textDecoration: 'none', color: 'black', textTransform: 'none'}} to="/student/login">Student</Link></NavDropdown.Item>
-                    <NavDropdown.Item><Link style={{ textDecoration: 'none', color: 'black', textTransform: 'none' }} to="/academy/login">Academy</Link></NavDropdown.Item>
+                  <NavDropdown.Item><Link style={{ textDecoration: 'none', color: 'black', textTransform: 'none' }} to="/student/login">Student</Link></NavDropdown.Item>
+                  <NavDropdown.Item><Link style={{ textDecoration: 'none', color: 'black', textTransform: 'none' }} to="/academy/login">Academy</Link></NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item><Link className="ml-auto" style={{fontWeight: '300', textDecoration: 'none', color: 'black', textTransform: 'none'}} to="/signup">Regístrate</Link></NavDropdown.Item>
                 </NavDropdown>
                 
               </Nav>

@@ -31,7 +31,7 @@ class AllOffers extends Component {
         return (
             <>
                 <Container className="offer-list">
-                    <h1>Ofertas de trabajo publicadas</h1>
+                    <h1 style={{fontWeight: '400'}}>Ofertas de trabajo publicadas</h1>
                     <hr /> <br />
                     <br /> <br />
                     <Row>
@@ -45,10 +45,9 @@ class AllOffers extends Component {
                     </Row>
                 </Container>
 
-                {/* PONER X */}
                 <Modal className="modal-create" size="lg" show={this.state.showApplyModal} onHide={() => this.handleApplyModal(false)}>
                     <Modal.Body>
-                        <ApplyForm closeModal={() => this.handleApplyModal(false)} offer={this.state.offerToApply} />
+                        <ApplyForm closeModal={() => this.handleApplyModal(false)} loggedUser={this.state.loggedInUser} offer={this.state.offerToApply} />
                     </Modal.Body>
                 </Modal>
             </>

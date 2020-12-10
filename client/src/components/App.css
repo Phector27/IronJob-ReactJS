@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700;900&display=swap');
 
 body {
-  font-family: montserrat;
+  font-family: Montserrat;
   font-weight: 200;
   background-color: #EBEBEB;
+  overflow-x: hidden;
 }
 
 .logo-container img{
@@ -15,7 +16,7 @@ body {
 }
 .picaporte3 h1 {
   position: relative;
-  font-weight: 900;
+  font-weight: 600;
   margin-top: 400px;
   color: #EBEBEB;
 }
@@ -114,7 +115,7 @@ h1, h2, h3 {
   background: lightgray;
   border-radius: 30px;
   box-sizing: border-box;
-  padding: 5px 15px;
+
   font-weight: 600;
   cursor: cursor;
   display: flex;

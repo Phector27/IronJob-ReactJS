@@ -19,6 +19,10 @@ const offerSchema = new Schema({
     },
     email: String,
     description: String,
+    referencia: {
+        type: String,
+        default: 0
+    },
     company: {
         type: Schema.Types.ObjectId,
         ref: 'User'

@@ -33,7 +33,7 @@ export default function ApplyForm(props) {
                             <input type="number" minLength="9" className="form-control" placeholder="Indica tu teléfono de contacto" name="phone" />
                         </div>
                         <div className="col-12 fieldsapply">
-                            <input type="text" minLength="5" className="form-control" placeholder="Interesad@ en oferta..." name="subject" />
+                            <input type="text" minLength="5" className="form-control" placeholder="Indica el número de oferta" name="subject" />
                         </div>
                         <div className="col-12 fieldsapply">
                             <textarea rows="8" id="" minLength="100" className="form-control" placeholder="Estás a un paso de cambiar tu vida! Indica porqué crees que tu perfil es perfecto para esta oferta :)" name="message"></textarea>

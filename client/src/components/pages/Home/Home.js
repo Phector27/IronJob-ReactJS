@@ -14,7 +14,7 @@ const Home = () => {
         <>
             <Slider1 />
             <Container>
-                <div className={'motivational'}> ENTENDEMOS LAS NECESIDADES DEL FUTURO Y LE DAMOS SOLUCION EN EL PRESENTE</div>
+                <div className={'motivational'}> <i>Entendemos las necesidades del futuro y le damos solución en el presente.</i></div>
             </Container>
             <Container fluid="100vw">
                 <Row>

@@ -20,14 +20,14 @@ router.get('/getAllOffers', (req, res) => {
 
 router.post('/newOffer', (req, res) => {
 
-    const { title, location, study, style, description, name, email, company } = req.body
+    const { title, location, study, style, description, name, email, company, referencia } = req.body
     if (!title || !location || !study || !style || !description || !email) {
         res.render('company/company-profile', { errorMsg: 'Por favor, rellena todos los campos para crear la oferta' })
         return
     }
 
     Offer
-        .create({ title, location, study, style, description, name, email, company })
+        .create({ title, location, study, style, description, name, email, company, referencia })
         .then(response => res.json(response))
         .catch(err => res.status(500).json(err))
 })
