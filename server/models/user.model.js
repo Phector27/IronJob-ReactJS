@@ -12,7 +12,10 @@ const userSchema = new Schema({
     type: String,
     default: './images/profiledefault.png'
   },
-  password: String,
+  password: {
+    type: String,
+    required: true
+  },
   githubProfile: {
     type: String,
     default: 'https://github.com'
@@ -26,6 +29,10 @@ const userSchema = new Schema({
     default: 'https://www.youtube.com/watch?v=KVakLLMBQxg'
   },
   descriptionUser: {
+    type: String,
+    default: ''
+  },
+  curriculum: {
     type: String,
     default: ''
   },

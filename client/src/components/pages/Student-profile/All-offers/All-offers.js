@@ -47,7 +47,7 @@ class AllOffers extends Component {
 
                 <Modal className="modal-create" size="lg" show={this.state.showApplyModal} onHide={() => this.handleApplyModal(false)}>
                     <Modal.Body>
-                        <ApplyForm closeModal={() => this.handleApplyModal(false)} loggedUser={this.state.loggedInUser} offer={this.state.offerToApply} />
+                        <ApplyForm  closeModal={() => this.handleApplyModal(false)} loggedUser={this.state.loggedInUser} offer={this.state.offerToApply} />
                     </Modal.Body>
                 </Modal>
             </>

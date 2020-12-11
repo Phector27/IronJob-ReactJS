@@ -5,7 +5,6 @@ import logo from './images/LOGO-IRONJOB-1LINE.png'
 import { Link } from 'react-router-dom'
 import AuthService from './../../../service/auth.service'
 
-
 class NavbarPage extends Component {
 
   constructor() {
@@ -19,6 +18,7 @@ class NavbarPage extends Component {
       .then(res => this.props.storeUser(undefined))
       .catch(err => console.log(err))
   }
+  
   render() {
     return (
       <Navbar bg="transparent" expand="sm" fixed="top" className="menu">
@@ -68,7 +68,7 @@ class NavbarPage extends Component {
                   }
                 </NavDropdown>
 
-                <NavDropdown style={{fontWeight: '600'}} title="School" id="basic-nav-dropdown" style={{marginLeft: '20px', fontWeight: '600'}}>
+                <NavDropdown title="School" id="basic-nav-dropdown" style={{marginLeft: '20px', fontWeight: '600'}}>
                   {
                     this.props.loggedUser.role === 'IRONHACK-RECRUITER'
                       ?
@@ -89,14 +89,13 @@ class NavbarPage extends Component {
             :
             <>
               <Nav className="ml-auto" style={{marginRight: '30px'}}>
-                <NavDropdown style={{ textDecoration: 'none', color: 'black', textTransform: 'none', fontWeight: 'bold', marginRight: '50px', fontSize: '1.3em'}} title="Acceder" id="basic-nav-dropdown">
+                <NavDropdown style={{ textDecoration: 'none', color: 'black', textTransform: 'none', fontWeight: 'bold', marginRight: '50px', fontSize: '1.2em'}} title="Acceder" id="basic-nav-dropdown">
                   <NavDropdown.Item><Link style={{textDecoration: 'none', color: 'black', textTransform: 'none'}} to="/company/login">Company</Link></NavDropdown.Item>
                   <NavDropdown.Item><Link style={{ textDecoration: 'none', color: 'black', textTransform: 'none' }} to="/student/login">Student</Link></NavDropdown.Item>
                   <NavDropdown.Item><Link style={{ textDecoration: 'none', color: 'black', textTransform: 'none' }} to="/academy/login">Academy</Link></NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item><Link className="ml-auto" style={{fontWeight: '300', textDecoration: 'none', color: 'black', textTransform: 'none'}} to="/signup">Regístrate</Link></NavDropdown.Item>
                 </NavDropdown>
-                
               </Nav>
             </>
         }
@@ -104,6 +103,5 @@ class NavbarPage extends Component {
     )
   }
 }
-
 
 export default NavbarPage;

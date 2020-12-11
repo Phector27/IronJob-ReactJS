@@ -49,7 +49,7 @@ class App extends Component {
             <Route path="/company/login" exact render={props => <CompanyLogin storeUser={this.setTheUser} {...props} />} /> {/*Cogemos las props de react-router-dom para poder redirigir*/}
             <Route path="/company/offers" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'BUSINESS-RECRUITER' ? <OfferList loggedUser={this.state.loggedInUser}/> : <Redirect to="/" />} />
             <Route path="/student/login" exact render={props => <StudentLogin storeUser={this.setTheUser} {...props} />} /> {/*Cogemos las props de react-router-dom para poder redirigir*/}
-            <Route path="/student/profile" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'Student' ? <StudentProfile loggedUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
+            <Route path="/student/profile" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'Student' ? <StudentProfile loggedUser={this.state.loggedInUser} storeUser={this.setTheUser} /> : <Redirect to="/" />} />
             <Route path="/student/all-offers" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'Student' ? <AllOffers loggedUser={this.state.loggedInUser}/> : <Redirect to="/" />} />
             <Route path="/student/apply" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'Student' ? <ApplyOffer loggedUser={this.state.loggedInUser}/> : <Redirect to="/" />} />
             <Route path="/academy/login" exact render={props => <AcademyLogin storeUser={this.setTheUser} {...props} />} /> {/*Cogemos las props de react-router-dom para poder redirigir*/}

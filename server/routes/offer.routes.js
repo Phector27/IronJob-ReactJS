@@ -43,19 +43,19 @@ router.delete('/delete/:offer_id', (req, res) => {
 })
 
 
-// router.get('/getOneOffer/:offer_id', (req, res) => {
+router.get('/getOneOffer/:offer_id', (req, res) => {
 
-//     if (!mongoose.Types.ObjectId.isValid(req.params.offer_id)) {
-//         res.status(404).json({ message: 'Invalid ID' })
-//         return
-//     }
+    if (!mongoose.Types.ObjectId.isValid(req.params.offer_id)) {
+        res.status(404).json({ message: 'Invalid ID' })
+        return
+    }
 
-//     Offer
-//         .findById(req.params.offer_id)
-//         .then(response => res.json(response))
-//         .catch(err => res.status(500).json(err))
+    Offer
+        .findById(req.params.offer_id)
+        .then(response => res.json(response))
+        .catch(err => res.status(500).json(err))
     
-// })
+})
 
 
 router.put('/editOffer/:offer_id', (req, res, next) => {
