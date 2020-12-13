@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
 body {
   font-family: Montserrat;
@@ -92,6 +93,10 @@ h1, h2, h3 {
   border: solid 2px rgba(255, 255, 255, 0.5);
   border-radius: 100%;
   vertical-align: middle;
+}
+
+.handwriting {
+  font-family: 'Dancing Script', cursive;
 }
 
 .student-profile img {

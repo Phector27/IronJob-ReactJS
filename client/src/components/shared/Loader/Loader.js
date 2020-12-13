@@ -6,6 +6,7 @@ const Loader = () => {
             <Spinner animation="grow" variant="success" />
             <Spinner animation="grow" variant="success" />
             <Spinner animation="grow" variant="success" />
+            Cargando
         </>
     )
 }

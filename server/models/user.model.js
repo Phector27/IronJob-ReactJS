@@ -36,6 +36,10 @@ const userSchema = new Schema({
     type: String,
     default: ''
   },
+  cvitae: {
+    type: String,
+    default: ''
+  },
   role: {
       type: String,
       enum: ['IRONHACK-RECRUITER', 'BUSINESS-RECRUITER', 'Student', 'Guest', 'Inactive'],

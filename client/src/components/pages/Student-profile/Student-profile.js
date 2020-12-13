@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Container, Row, Col, Form, Button, Modal } from 'react-bootstrap'
+import { Container, Row, Col, Button, Modal } from 'react-bootstrap'
 import linkedinImage from './../../layout/Navigation/images/pngegg.png'
 import githubLogo from './../../layout/Navigation/images/github_PNG83.png'
+import adobeLogo from './../../layout/Navigation/images/pedefe.png'
 import Video from 'react-player'
 import UserService from './../../../service/user.service'
 import EditProfile from './edit-profile'
@@ -25,13 +26,13 @@ export default class StudentProfile extends Component {
         return (
             <>
                 <Container className="student-profile">
-                    <h1>Bienvenido a tu perfil, {this.props.loggedUser.name}</h1>
+                    <h1 style={{marginTop: '150px'}}>Bienvenido a tu perfil, {this.props.loggedUser.name}</h1>
                     <hr />
                     <br />
-                    <Button className="btn btn-block btn-dark" onClick={() => this.handleUserModal(true)}>Editar perfil</Button>
+                    <Button className="btn btn-dark" style={{marginBottom: '50px'}} onClick={() => this.handleUserModal(true)}>Editar perfil ✍️</Button>
                     <Row className="hero-profile">
-                        <Col md={4}>
-                            <h2>Username:</h2>
+                        <Col md={3}>
+                            <h2 style={{fontWeight: '300'}} className="username">Usuario:</h2>
                             <h3>{this.props.loggedUser.username}</h3>
                             <img
                                 alt="User logo"
@@ -40,10 +41,10 @@ export default class StudentProfile extends Component {
                             />
                         </Col>
 
-                        <Col md={4}>
-                            <h2>Github profile:</h2>
+                        <Col md={3}>
+                            <h2 style={{fontWeight: '300'}} className="github">Github profile:</h2>
                             <br />
-                            <a href={this.props.loggedUser.githubProfile} target="_blank">
+                            <a href={this.props.loggedUser.githubProfile} target="_blank" rel="noreferrer">
                                 <img
                                     alt="Github logo"
                                     src={githubLogo}
@@ -51,10 +52,10 @@ export default class StudentProfile extends Component {
                                 />
                             </a>
                         </Col>
-                        <Col md={4}>
-                            <h2>Linkedin profile:</h2>
+                        <Col md={3}>
+                            <h2 style={{fontWeight: '300'}} className="linkedin">Linkedin profile:</h2>
                             <br />
-                            <a href={this.props.loggedUser.linkedInProfile} target="_blank">
+                            <a href={this.props.loggedUser.linkedInProfile} target="_blank" rel="noreferrer">
                                 <img
                                     alt="Linkedin logo"
                                     src={linkedinImage}
@@ -62,18 +63,33 @@ export default class StudentProfile extends Component {
                                 />
                             </a>
                         </Col>
+                        <Col md={3}>
+                            <h2 style={{fontWeight: '300'}} className="pdfLogo">Curriculum:</h2>
+                            <br />
+                            <a href={this.props.loggedUser.cvitae} target="_blank" rel="noreferrer">
+                                <img
+                                    alt="Adobe PDF logo"
+                                    src={adobeLogo}
+                                    className="d-inline-block align-top"
+                                />
+                            </a>
+                        </Col>
                     </Row>
                     <Row>
-                        <Col md={12} className="video">
-                            <h2>Vídeo presentación:</h2>
+                        <Col lg={8} className="video" style={{ marginTop: '75px'}}>
+                            <h2 style={{fontWeight: '300'}}>Vídeo presentación:</h2>
                             <Video url={this.props.loggedUser.videoProfile} playing={true} volume={5} muted={true} />
                         </Col>
 
-                        <Col md={12} style={{marginBottom: '150px'}}>
-                            <h2>Descripción:</h2>
-                            <p>{this.props.loggedUser.descriptionUser}</p>
+                        <Col lg={4} style={{ marginTop: '75px'}}>
+                            <h2 style={{fontWeight: '300'}}>Descripción:</h2>
+                            <p style={{fontSize: '1.1em', textAlign: 'initial'}}>{this.props.loggedUser.descriptionUser}</p>
                         </Col>
                     </Row>
+                </Container>
+
+                <Container style={{marginBottom: '100px'}}>
+                    <h4 className="handwriting" style={{textAlign: 'center'}}>El talento gana partidos, pero el trabajo en equipo y la inteligencia ganan campeonatos. — <i><b>Michael Jordan</b></i></h4>
                 </Container>
 
                 <Modal className="modal-create" size="lg" show={this.state.showEditUserModal} onHide={() => this.handleUserModal(false)}>

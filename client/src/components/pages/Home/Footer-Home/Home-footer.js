@@ -20,7 +20,7 @@ const Footer = () => {
                     </Col>
                 </Row>
                 <Row>
-                    <iframe src={mapSrc} style={{ width: "70vw", height: "40vh", border: '0' }}></iframe>
+                    <iframe src={mapSrc} style={{ width: "70vw", height: "40vh", border: '0' }} title="maps"></iframe>
                 </Row>
                 <Row>
                     <Col md={{ span: 6, offset: 3 }} style={{ marginTop: '25px', textAlign: 'center' }}>
@@ -34,9 +34,9 @@ const Footer = () => {
                 <Row>
                     <article className="RRSS">
                         <Col>
-                            <a href={twitterLink} target="blank" className='twitter'><img src={twitterImg}></img></a>
-                            <a href={instagramLink} target="blank" className='instagram'><img src={instagramImg}></img></a>
-                            <a href={facebookLink} target="blank" className='facebook'><img src={facebookImg}></img></a>
+                            <a href={twitterLink} target="blank" className='twitter'><img src={twitterImg} alt="twiter logo"></img></a>
+                            <a href={instagramLink} target="blank" className='instagram'><img src={instagramImg} alt="instagram logo"></img></a>
+                            <a href={facebookLink} target="blank" className='facebook'><img src={facebookImg} alt="facebook logo"></img></a>
                         </Col>
                     </article>
                 </Row>

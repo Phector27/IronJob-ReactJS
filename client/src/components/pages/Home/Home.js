@@ -62,7 +62,7 @@ const Home = () => {
                                 medio que las empresas necesitan actualmente</p>
                         </Col>
                         <Col md={6}>
-                            <img src={Image} alt='bussiness image'></img>
+                            <img src={Image} alt='bussiness logo'></img>
                         </Col>
                     </Row>
                     <div style={{ height: 50 }}></div>
@@ -70,7 +70,7 @@ const Home = () => {
                     <div style={{ height: 100 }}></div>
                     <Row>
                         <Col md={6}>
-                            <img src={Image2} alt='students image'></img>
+                            <img src={Image2} alt='students logo'></img>
                         </Col>
                         <Col md={6}>
                             <p>Nuestro trabajo es ahorrarte trabajo a ti. Ironjob se encarga de encontrar el mayor
