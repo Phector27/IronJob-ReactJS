@@ -48,21 +48,12 @@ export default class EditProfile extends Component {
 
     handleFilesImage = e => {
         const uploadImg = new FormData()
-        uploadImg.append('profilePhoto', e.target.files[0])
+        uploadImg.append(e.target.name, e.target.files[0])
+        console.log('SE SUBE LA IMAGEN O NO', e.target.files[0])
 
         this.filesService
-            .uploadFile(uploadImg)
+            .uploadPhoto(uploadImg)
             .then(response => this.setState({ profilePhoto: response.data.secure_url }))
-            .catch(err => console.log('ERRORRR!', err))
-    }
-
-    handleFilesCV = e => {
-        const uploadCV = new FormData()
-        uploadCV.append('curriculum', e.target.files[0])
-
-        this.filesService
-            .uploadFile(uploadCV)
-            .then(response => this.setState({ curriculum: response.data.secure_url}))
             .catch(err => console.log('ERRORRR!', err))
     }
 
@@ -76,7 +67,7 @@ export default class EditProfile extends Component {
                 </Form.Group>
                 <Form.Group controlId="profilePhoto">
                     <Form.Label>Foto de perfil</Form.Label>
-                    <Form.Control type="file" onChange={this.handleFilesImage} />
+                    <Form.Control type="file" name="profilePhoto" onChange={this.handleFilesImage} />
                 </Form.Group>
                 <Form.Group controlId="githubProfile">
                     <Form.Label>Perfil de Github</Form.Label>
@@ -93,10 +84,6 @@ export default class EditProfile extends Component {
                 <Form.Group controlId="descriptionUser">
                     <Form.Label>Descripción</Form.Label>
                     <Form.Control as="textarea" rows="8" cols="30" name="descriptionUser" value={this.state.descriptionUser} onChange={this.handleInput} />
-                </Form.Group>
-                <Form.Group controlId="curriculum">
-                    <Form.Label>Curriculum</Form.Label>
-                    <Form.Control type="file" onChange={this.handleFilesCV} />
                 </Form.Group>
                 <Button variant="dark btn-block" type="submit">Editar perfil</Button>
             </Form>

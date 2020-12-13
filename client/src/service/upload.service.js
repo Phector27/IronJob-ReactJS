@@ -10,4 +10,5 @@ export default class FilesService {
     }
 
     uploadFile = fileForm => this.apiHandler.post('/upload', fileForm)
+    uploadPhoto = photoForm => this.apiHandler.post('/upload/photo', photoForm)
 }
