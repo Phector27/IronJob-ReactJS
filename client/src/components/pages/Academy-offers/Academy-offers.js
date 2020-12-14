@@ -39,7 +39,7 @@ class AcademyOffers extends Component {
 
     searchFor = search => {
         const copyOffers = [...this.state.offersSearch]
-        const filterProds = copyOffers.filter(elm => elm.referencia.toLowerCase().includes(search.toLowerCase()))
+        const filterProds = copyOffers.filter(elm => elm.reference.toLowerCase().includes(search.toLowerCase()))
         this.setState({ offers: filterProds }, () => console.log(this.state.offersSearch))
       }
 

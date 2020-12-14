@@ -19,7 +19,7 @@ const offerSchema = new Schema({
     },
     email: String,
     description: String,
-    referencia: {
+    reference: {
         type: String,
         default: 0
     },

@@ -1,6 +1,6 @@
 import { Col, Card, Button } from 'react-bootstrap'
 
-const OfferCard = ({ title, study, name, location, style, description, email, referencia, deleteElement, handleModal }) => {
+const OfferCard = ({ title, study, name, location, style, description, email, reference, deleteElement, handleModal }) => {
 
     return (
         <Col md={6}>
@@ -11,7 +11,7 @@ const OfferCard = ({ title, study, name, location, style, description, email, re
                     <Card.Text className="strong">{location} - {style}</Card.Text>
                     <Card.Text>{description}</Card.Text>
                     <Card.Text style={{fontWeight: 'bold', opacity: '0.8'}}>Contacto: {email} </Card.Text>
-                    <Card.Text><p style={{fontWeight: 'bold'}}>Referencia de oferta: {referencia}</p></Card.Text>
+                    <Card.Text><p style={{fontWeight: 'bold'}}>reference de oferta: {reference}</p></Card.Text>
                     <div className="expand">
                         <Button className="btn btn-sm" variant="dark" onClick={() => handleModal()}>Editar oferta</Button>
                         <Button className="btn btn-sm" variant="danger" onClick={() => deleteElement()}>Eliminar oferta</Button>
