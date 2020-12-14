@@ -12,16 +12,14 @@ body {
   max-height: 40px;
 }
 
-.picaporte img{
-  width: 500px;
-}
-.picaporte3 h1 {
+.section2 h1 {
   position: relative;
   font-weight: 600;
   margin-top: 400px;
   color: #EBEBEB;
 }
-.picaporte3 h2 {
+
+.section2 h2 {
   position: relative;
   font-style: italic;
   font-weight: 300;

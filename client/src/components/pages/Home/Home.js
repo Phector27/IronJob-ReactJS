@@ -22,7 +22,7 @@ const Home = () => {
                         <Parallax
                             bgImage={image1}
                             strength={-700}>
-                            <div className={'picaporte3'}>
+                            <div className={'section2'}>
                                 <h1>COLOCAMOS EL TALENTO DONDE HACE FALTA</h1>
                                 <h2>La mejor plataforma para poner el talento en el foco de sus necesidades</h2>
                             </div>
