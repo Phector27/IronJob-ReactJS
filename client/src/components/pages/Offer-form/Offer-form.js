@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import OfferService from './../../../service/offers.service'
-import { Container, Button, Form } from 'react-bootstrap'
+import { Container, Button, Form, Row, Col } from 'react-bootstrap'
 
 
 class OfferForm extends Component {
@@ -56,7 +56,8 @@ class OfferForm extends Component {
                         <Form.Label style={{marginLeft: '10px', fontSize: '1.2em', fontWeight: '300'}}>Título de tu oferta</Form.Label>
                         <Form.Control type="text" minlength="5" name="title" value={this.state.title} onChange={this.handleInputChange} />
                     </Form.Group>
-                    <fieldset>
+                        <Row>
+                            <Col>
                         <Form.Group controlId="study">
                             <Form.Label style={{marginLeft: '10px', fontSize: '1.2em', fontWeight: '300'}} as="legend">
                                 Especialidad</Form.Label>
@@ -82,12 +83,8 @@ class OfferForm extends Component {
                                 onChange={this.handleInputChange}
                             />
                         </Form.Group>
-                    </fieldset>
-                    <Form.Group controlId="location">
-                        <Form.Label style={{marginLeft: '10px', fontSize: '1.2em', fontWeight: '300'}}>Ubicación</Form.Label>
-                        <Form.Control type="text" minlength="3" name="location" value={this.state.location} onChange={this.handleInputChange} />
-                    </Form.Group>
-                    <fieldset>
+                            </Col>
+                        <Col>
                         <Form.Group controlId="style">
                             <Form.Label style={{marginLeft: '10px', fontSize: '1.2em', fontWeight: '300'}} as="legend">
                                 Tipo de empleo</Form.Label>
@@ -104,9 +101,21 @@ class OfferForm extends Component {
                                 value="Presencial"
                                 name="style"
                                 onChange={this.handleInputChange}
+                                />
+                                <Form.Check style={{marginLeft: '10px'}}
+                                type="radio"
+                                label="Mixto"
+                                value="Mixto"
+                                name="style"
+                                onChange={this.handleInputChange}
                             />
                         </Form.Group>
-                    </fieldset>
+                        </Col>
+                    </Row>
+                    <Form.Group controlId="location">
+                        <Form.Label style={{marginLeft: '10px', fontSize: '1.2em', fontWeight: '300'}}>Ubicación</Form.Label>
+                        <Form.Control type="text" minlength="3" name="location" value={this.state.location} onChange={this.handleInputChange} />
+                    </Form.Group>
                     <Form.Group controlId="description">
                         <Form.Label style={{marginLeft: '10px', fontSize: '1.2em', fontWeight: '300'}}>Descripción</Form.Label>
                         <Form.Control as="textarea" rows={10} type="text" minlength="100" name="description" value={this.state.description} onChange={this.handleInputChange} />
@@ -114,12 +123,12 @@ class OfferForm extends Component {
                     <Form.Group controlId="email">
                         <Form.Label style={{marginLeft: '10px', fontSize: '1.2em', fontWeight: '300'}}>Email</Form.Label>
                         <Form.Control type="email" placeholder="name@example.com" minlength="6" name="email" value={this.state.email} onChange={this.handleInputChange} />
+                        <small style={{ marginLeft: '10px', marginTop: '-10px' }}className="form-text text-muted"><i>Solo compartiremos tu email de contacto con el equipo de IronHack.</i></small>
                     </Form.Group>
                     <Form.Label style={{fontWeight: 'bold', marginLeft: '10px', fontSize: '1.2em'}}>Referencia de oferta</Form.Label>
                     <Form.Group controlId="referencia">
-                        <Form.Control style={{marginTop: '-10px'}} type="text" name="referencia" readOnly value={this.state.referencia} onChange={this.handleInputChange} />
+                        <Form.Control style={{marginTop: '-10px'}} type="text" name="referencia" readOnly value={this.state.referencia} onChange={this.handleInputChange} /><hr />
                     </Form.Group>
-                    <small className="form-text text-muted"><i>Solo compartiremos tu email de contacto con el equipo de IronHack.</i></small><hr />
                     <Button variant="dark btn-block" type="submit">Crear nueva oferta de empleo</Button>
                 </Form>
             </Container>

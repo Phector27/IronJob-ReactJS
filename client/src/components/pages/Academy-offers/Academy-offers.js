@@ -4,7 +4,7 @@ import { Container, Row, Modal } from 'react-bootstrap'
 import OfferCard from './../Offers-list/Offer-card'
 import Loader from './../../shared/Loader/Loader'
 import OfferEdit from './../Offer-edit/Offer-edit'
-import SearchBar from './../../shared/Searchbar/Searchbar'
+import SearchBarIdOffer from './../../shared/Searchbar/Searchbar-id-offer'
 
 class AcademyOffers extends Component {
 
@@ -39,7 +39,7 @@ class AcademyOffers extends Component {
 
     searchFor = search => {
         const copyOffers = [...this.state.offersSearch]
-        const filterProds = copyOffers.filter(elm => elm.study.toLowerCase().includes(search.toLowerCase()))
+        const filterProds = copyOffers.filter(elm => elm.referencia.toLowerCase().includes(search.toLowerCase()))
         this.setState({ offers: filterProds }, () => console.log(this.state.offersSearch))
       }
 
@@ -48,7 +48,8 @@ class AcademyOffers extends Component {
             <>
                 <Container className="offer-list">
                     <h1>Ofertas de trabajo publicadas</h1>
-                    <SearchBar searchFor={value => this.searchFor(value)}/>
+                    <br />
+                    <SearchBarIdOffer searchFor={value => this.searchFor(value)}/>
                     <hr /> <br />
                     <Row>
                         {

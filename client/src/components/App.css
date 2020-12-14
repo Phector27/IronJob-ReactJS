@@ -146,6 +146,11 @@ h1, h2, h3 {
   width: 3%;
 }
 
+.whatsapp img {
+  width: 4%;
+  margin-left: 25px;
+}
+
 .RRSS {
   text-align: center;
 }

@@ -22,7 +22,7 @@ const userSchema = new Schema({
   },
   linkedInProfile: {
     type: String,
-    default: 'https://linkedin.com'
+    default: 'https://www.linkedin.com/in/'
   },
   videoProfile: {
     type: String,

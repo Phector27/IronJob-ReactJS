@@ -25,3 +25,7 @@ h1 {
 .offer-list {
     margin-top: 100px;
   }
+
+.create-offer {
+    text-align: center;
+}

@@ -53,7 +53,7 @@ class App extends Component {
             <Route path="/student/all-offers" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'Student' ? <AllOffers loggedUser={this.state.loggedInUser}/> : <Redirect to="/" />} />
             <Route path="/student/apply" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'Student' ? <ApplyOffer loggedUser={this.state.loggedInUser}/> : <Redirect to="/" />} />
             <Route path="/academy/login" exact render={props => <AcademyLogin storeUser={this.setTheUser} {...props} />} /> {/*Cogemos las props de react-router-dom para poder redirigir*/}
-            <Route path="/academy/control" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'IRONHACK-RECRUITER' ? <UsersList /> : <Redirect to="/" />} />
+            <Route path="/academy/control" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'IRONHACK-RECRUITER' ? <UsersList loggedUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
             <Route path="/academy/offers" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'IRONHACK-RECRUITER' ? <AcademyOffers /> : <Redirect to="/" />} />
             <Route path="/academy/edit" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'IRONHACK-RECRUITER' ? <StudentProfile loggedUser={this.state.loggedInUser} storeUser={this.setTheUser} /> : <Redirect to="/" />} />
             <Route path="/logout" render={() => <Redirect to="/" />} />

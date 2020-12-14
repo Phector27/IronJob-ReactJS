@@ -18,7 +18,7 @@ class NavbarPage extends Component {
       .then(res => this.props.storeUser(undefined))
       .catch(err => console.log(err))
   }
-  
+
   render() {
     return (
       <Navbar bg="transparent" expand="sm" fixed="top" className="menu">

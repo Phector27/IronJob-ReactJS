@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import OfferService from './../../../service/offers.service'
-import { Container, Button, Form } from 'react-bootstrap'
+import { Container, Button, Form, Row, Col } from 'react-bootstrap'
 
 
 class OfferEdit extends Component {
@@ -50,25 +50,26 @@ class OfferEdit extends Component {
                         <Form.Label>Título de tu oferta</Form.Label>
                         <Form.Control type="text" name="title" value={this.state.title} onChange={this.handleInputChange} />
                     </Form.Group>
-                    <fieldset>
+                    <Row>
+                            <Col>
                         <Form.Group controlId="study">
-                            <Form.Label as="legend">
+                            <Form.Label style={{marginLeft: '10px', fontSize: '1.2em', fontWeight: '300'}} as="legend">
                                 Especialidad</Form.Label>
-                            <Form.Check
+                            <Form.Check style={{marginLeft: '10px'}}
                                 type="radio"
                                 label="UI/UX"
                                 value="UI/UX"
                                 name="study"
                                 onChange={this.handleInputChange}
                             />
-                            <Form.Check
+                            <Form.Check style={{marginLeft: '10px'}}
                                 type="radio"
                                 label="Web Development"
                                 value="Web Development"
                                 name="study"
                                 onChange={this.handleInputChange}
                             />
-                            <Form.Check
+                            <Form.Check style={{marginLeft: '10px'}}
                                 type="radio"
                                 label="Cyber"
                                 value="Cyber"
@@ -76,31 +77,39 @@ class OfferEdit extends Component {
                                 onChange={this.handleInputChange}
                             />
                         </Form.Group>
-                    </fieldset>
-                    <Form.Group controlId="location">
-                        <Form.Label>Ubicación</Form.Label>
-                        <Form.Control type="text" name="location" value={this.state.location} onChange={this.handleInputChange} />
-                    </Form.Group>
-                    <fieldset>
+                            </Col>
+                        <Col>
                         <Form.Group controlId="style">
-                            <Form.Label as="legend">
+                            <Form.Label style={{marginLeft: '10px', fontSize: '1.2em', fontWeight: '300'}} as="legend">
                                 Tipo de empleo</Form.Label>
-                            <Form.Check
+                            <Form.Check style={{marginLeft: '10px'}}
                                 type="radio"
                                 label="Remoto"
                                 value="Remoto"
                                 name="style"
                                 onChange={this.handleInputChange}
                             />
-                            <Form.Check
+                            <Form.Check style={{marginLeft: '10px'}}
                                 type="radio"
                                 label="Presencial"
                                 value="Presencial"
                                 name="style"
                                 onChange={this.handleInputChange}
+                                />
+                                <Form.Check style={{marginLeft: '10px'}}
+                                type="radio"
+                                label="Mixto"
+                                value="Mixto"
+                                name="style"
+                                onChange={this.handleInputChange}
                             />
                         </Form.Group>
-                    </fieldset>
+                        </Col>
+                    </Row>
+                    <Form.Group controlId="location">
+                        <Form.Label>Ubicación</Form.Label>
+                        <Form.Control type="text" name="location" value={this.state.location} onChange={this.handleInputChange} />
+                    </Form.Group>
                     <Form.Group controlId="description">
                         <Form.Label>Descripción</Form.Label>
                         <Form.Control as="textarea" rows={10} type="text" name="description" value={this.state.description} onChange={this.handleInputChange} />

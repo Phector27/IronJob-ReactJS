@@ -48,7 +48,9 @@ class OfferList extends Component {
                 <Container className="offer-list">
                     <h1>Ofertas de trabajo publicadas</h1>
                     <hr /> <br />
-                    <Button className="btn btn-block" onClick={() => this.handleCreateModal(true)} variant="dark" size="lg">Crear nueva oferta de empleo</Button>
+                    <div style={{textAlign: 'center'}}>
+                        <Button className="btn btn-md" onClick={() => this.handleCreateModal(true)} variant="dark" size="lg">Crear nueva oferta de empleo 📝</Button>
+                    </div>
                     <br /> <br />
                     <Row>
                         {
@@ -56,7 +58,7 @@ class OfferList extends Component {
                                 ?
                                 this.state.offers.filter(elm => elm.company === this.props.loggedUser._id).map(elm => <OfferCard key={elm._id} {...elm} deleteElement={() => this.deleteOffer(elm._id)} handleModal={() => this.handleEditModal(true, elm)} />)
                                 :
-                                <Loader/>
+                                <Loader />
                         }
                     </Row>
                 </Container>

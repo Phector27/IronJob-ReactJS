@@ -9,11 +9,12 @@ const Footer = () => {
     const instagramLink = "http://www.instagram.com/ironjobes"
     const instagramImg = "https://assets.stickpng.com/images/580b57fcd9996e24bc43c521.png"
     const facebookLink = "https://www.facebook.com/IronJob-104079551548311/"
-    // const facebookLink = "https://api.whatsapp.com/send?phone=34654087601&text=%20Hola!%20Quiero%20sexo%20sus%20servicios!"
     const facebookImg = "https://assets.stickpng.com/images/584ac2d03ac3a570f94a666d.png"
+    const whatsAppImg = "https://assets.stickpng.com/images/580b57fcd9996e24bc43c543.png"
+    const whatsAppLink = "https://api.whatsapp.com/send?phone=34640254348&text=%20Hola!%20contacto%20con%20vosotros por..."
 
     return (
-        <section style={{ marginBottom: '100px', marginTop: '100px' }}>
+        <section style={{ marginBottom: '100px', marginTop: '150px' }}>
             <Container>
                 <Row>
                     <Col md={{ span: 4, offset: 4 }} style={{ marginBottom: '25px' }}>
@@ -38,6 +39,7 @@ const Footer = () => {
                             <a href={twitterLink} target="blank" className='twitter'><img src={twitterImg} alt="twiter logo"></img></a>
                             <a href={instagramLink} target="blank" className='instagram'><img src={instagramImg} alt="instagram logo"></img></a>
                             <a href={facebookLink} target="blank" className='facebook'><img src={facebookImg} alt="facebook logo"></img></a>
+                            <a href={whatsAppLink} target="blank" className='whatsapp'><img src={whatsAppImg} alt="whatsapp logo"></img></a>
                         </Col>
                     </article>
                 </Row>

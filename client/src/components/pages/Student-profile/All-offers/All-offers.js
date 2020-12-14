@@ -40,10 +40,10 @@ class AllOffers extends Component {
         return (
             <>
                 <Container className="offer-list">
-                    <h1 style={{fontWeight: '400'}}>Ofertas de trabajo publicadas</h1>
-                    <hr /> <br />
+                    <h1 style={{ fontWeight: '400' }}>Ofertas de trabajo publicadas</h1>
+                    <br />
                     <SearchBar searchFor={value => this.searchFor(value)}/>
-                    <br /> <br />
+                    <hr /> <br />
                     <Row>
                         {
                             this.state.offers

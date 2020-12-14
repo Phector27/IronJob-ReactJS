@@ -11,7 +11,7 @@ const offerSchema = new Schema({
     },
     style: {
         type: String,
-        enum: ['Remoto', 'Presencial']
+        enum: ['Remoto', 'Presencial', 'Mixto']
     },
     name: {
         type: String,
