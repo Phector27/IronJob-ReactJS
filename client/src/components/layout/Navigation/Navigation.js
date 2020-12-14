@@ -9,6 +9,9 @@ class NavbarPage extends Component {
 
   constructor() {
     super()
+    this.state = {
+      color: 'transparent'
+    }
     this.authService = new AuthService()
   }
 
@@ -19,16 +22,27 @@ class NavbarPage extends Component {
       .catch(err => console.log(err))
   }
 
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = e => {
+
+    if (window.scrollY < 100) {
+      this.setState({ color: 'transparent' })
+    } else if (window.scrollY > 100) {
+      this.setState({ color: 'white' })
+    }
+  }
+
+
   render() {
     return (
-      <Navbar bg=
-        {
-          window.scrollY < 50
-            ?
-            "transparent"
-            :
-            "white"
-        } expand="sm" fixed="top" className="menu">
+      <Navbar bg={this.state.color} expand="sm" fixed="top" className="menu">
         <Link to="/">
           <Navbar.Brand><img
             alt="Logotipo"

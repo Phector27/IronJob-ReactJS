@@ -75,7 +75,7 @@ h1, h2, h3 {
   padding-bottom: 12px;
   position: fixed;
   width: 100vw;
-  transition: all .8s;
+  transition: all 1.3s;
 }
 
 .menu img {
