@@ -21,7 +21,14 @@ class NavbarPage extends Component {
 
   render() {
     return (
-      <Navbar bg="transparent" expand="sm" fixed="top" className="menu">
+      <Navbar bg=
+        {
+          window.scrollY < 50
+            ?
+            "transparent"
+            :
+            "white"
+        } expand="sm" fixed="top" className="menu">
         <Link to="/">
           <Navbar.Brand><img
             alt="Logotipo"
@@ -35,52 +42,52 @@ class NavbarPage extends Component {
           this.props.loggedUser
             ?
             <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="ml-auto" style={{marginRight: '30px'}}>
-                <NavDropdown style={{fontWeight: '600'}} title="Company" id="basic-nav-dropdown">
+              <Nav className="ml-auto" style={{ marginRight: '30px' }}>
+                <NavDropdown style={{ fontWeight: '600' }} title="Company" id="basic-nav-dropdown">
                   {
                     this.props.loggedUser.role === 'BUSINESS-RECRUITER'
                       ?
                       <>
-                        <NavDropdown.Item><Link to="/company/offers" style={{textDecoration: 'none', color: 'black', textTransform: 'none'}}>Tus Ofertas</Link></NavDropdown.Item>
+                        <NavDropdown.Item><Link to="/company/offers" style={{ textDecoration: 'none', color: 'black', textTransform: 'none' }}>Tus Ofertas</Link></NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item><Link to="/logout" style={{textDecoration: 'none', color: 'black', textTransform: 'none'}} onClick={this.logOut}>Cerrar sesión</Link></NavDropdown.Item>
+                        <NavDropdown.Item><Link to="/logout" style={{ textDecoration: 'none', color: 'black', textTransform: 'none' }} onClick={this.logOut}>Cerrar sesión</Link></NavDropdown.Item>
                       </>
                       :
                       <>
-                        <NavDropdown.Item><Link to="/company/login" style={{textDecoration: 'none', color: 'black', textTransform: 'none'}}>Acceder</Link></NavDropdown.Item>
+                        <NavDropdown.Item><Link to="/company/login" style={{ textDecoration: 'none', color: 'black', textTransform: 'none' }}>Acceder</Link></NavDropdown.Item>
                       </>
                   }
                 </NavDropdown>
-                <NavDropdown title="Student" id="basic-nav-dropdown" style={{marginLeft: '20px', fontWeight: '600'}}>
+                <NavDropdown title="Student" id="basic-nav-dropdown" style={{ marginLeft: '20px', fontWeight: '600' }}>
                   {
                     this.props.loggedUser.role === 'Student'
                       ?
                       <>
-                        <NavDropdown.Item><Link to="/student/profile" style={{textDecoration: 'none', color: 'black', textTransform: 'none'}}>Perfil</Link></NavDropdown.Item>
-                        <NavDropdown.Item><Link to="/student/all-offers" style={{textDecoration: 'none', color: 'black', textTransform: 'none'}}>Ver ofertas</Link></NavDropdown.Item>
+                        <NavDropdown.Item><Link to="/student/profile" style={{ textDecoration: 'none', color: 'black', textTransform: 'none' }}>Perfil</Link></NavDropdown.Item>
+                        <NavDropdown.Item><Link to="/student/all-offers" style={{ textDecoration: 'none', color: 'black', textTransform: 'none' }}>Ver ofertas</Link></NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item><Link to="/logout" style={{textDecoration: 'none', color: 'black', textTransform: 'none'}} onClick={this.logOut}>Cerrar sesión</Link></NavDropdown.Item>
+                        <NavDropdown.Item><Link to="/logout" style={{ textDecoration: 'none', color: 'black', textTransform: 'none' }} onClick={this.logOut}>Cerrar sesión</Link></NavDropdown.Item>
                       </>
                       :
                       <>
-                        <NavDropdown.Item><Link to="/student/login" style={{textDecoration: 'none', color: 'black', textTransform: 'none'}}>Acceder</Link></NavDropdown.Item>
+                        <NavDropdown.Item><Link to="/student/login" style={{ textDecoration: 'none', color: 'black', textTransform: 'none' }}>Acceder</Link></NavDropdown.Item>
                       </>
                   }
                 </NavDropdown>
 
-                <NavDropdown title="School" id="basic-nav-dropdown" style={{marginLeft: '20px', fontWeight: '600'}}>
+                <NavDropdown title="School" id="basic-nav-dropdown" style={{ marginLeft: '20px', fontWeight: '600' }}>
                   {
                     this.props.loggedUser.role === 'IRONHACK-RECRUITER'
                       ?
                       <>
-                        <NavDropdown.Item><Link to="/academy/offers" style={{textDecoration: 'none', color: 'black', textTransform: 'none'}}>Ofertas</Link></NavDropdown.Item>
-                        <NavDropdown.Item><Link to="/academy/control" style={{textDecoration: 'none', color: 'black', textTransform: 'none'}}>Panel de control</Link></NavDropdown.Item>
+                        <NavDropdown.Item><Link to="/academy/offers" style={{ textDecoration: 'none', color: 'black', textTransform: 'none' }}>Ofertas</Link></NavDropdown.Item>
+                        <NavDropdown.Item><Link to="/academy/control" style={{ textDecoration: 'none', color: 'black', textTransform: 'none' }}>Panel de control</Link></NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item><Link to="/logout" style={{textDecoration: 'none', color: 'black', textTransform: 'none'}} onClick={this.logOut}>Cerrar sesión</Link></NavDropdown.Item>
+                        <NavDropdown.Item><Link to="/logout" style={{ textDecoration: 'none', color: 'black', textTransform: 'none' }} onClick={this.logOut}>Cerrar sesión</Link></NavDropdown.Item>
                       </>
                       :
                       <>
-                        <NavDropdown.Item><Link to="/academy/login" style={{textDecoration: 'none', color: 'black', textTransform: 'none'}}>Acceder</Link></NavDropdown.Item>
+                        <NavDropdown.Item><Link to="/academy/login" style={{ textDecoration: 'none', color: 'black', textTransform: 'none' }}>Acceder</Link></NavDropdown.Item>
                       </>
                   }
                 </NavDropdown>
@@ -88,13 +95,13 @@ class NavbarPage extends Component {
             </Navbar.Collapse>
             :
             <>
-              <Nav className="ml-auto" style={{marginRight: '30px'}}>
-                <NavDropdown style={{ textDecoration: 'none', color: 'black', textTransform: 'none', fontWeight: 'bold', marginRight: '50px', fontSize: '1.2em'}} title="Acceder" id="basic-nav-dropdown">
-                  <NavDropdown.Item><Link style={{textDecoration: 'none', color: 'black', textTransform: 'none'}} to="/company/login">Company</Link></NavDropdown.Item>
+              <Nav className="ml-auto" style={{ marginRight: '30px' }}>
+                <NavDropdown style={{ textDecoration: 'none', color: 'black', textTransform: 'none', fontWeight: 'bold', marginRight: '50px', fontSize: '1.2em' }} title="Acceder" id="basic-nav-dropdown">
+                  <NavDropdown.Item><Link style={{ textDecoration: 'none', color: 'black', textTransform: 'none' }} to="/company/login">Company</Link></NavDropdown.Item>
                   <NavDropdown.Item><Link style={{ textDecoration: 'none', color: 'black', textTransform: 'none' }} to="/student/login">Student</Link></NavDropdown.Item>
                   <NavDropdown.Item><Link style={{ textDecoration: 'none', color: 'black', textTransform: 'none' }} to="/academy/login">Academy</Link></NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item><Link className="ml-auto" style={{fontWeight: '300', textDecoration: 'none', color: 'black', textTransform: 'none'}} to="/signup">Regístrate</Link></NavDropdown.Item>
+                  <NavDropdown.Item><Link className="ml-auto" style={{ fontWeight: '300', textDecoration: 'none', color: 'black', textTransform: 'none' }} to="/signup">Regístrate</Link></NavDropdown.Item>
                 </NavDropdown>
               </Nav>
             </>

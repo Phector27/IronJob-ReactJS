@@ -18,7 +18,7 @@ class SearchBarName extends Component {
     render() {
         return (
             <form style={{textAlign: 'center'}}>
-                <input style={{borderRadius: '10px', width: '70%'}} type="text" placeholder="🔎 Búsqueda por nombre de usuario. Por ejemplo: Héctor Carramiñana" value={this.state.search} onChange={this.inputSearch} />
+                <input style={{borderRadius: '10px', width: '100%', border: 'none'}} type="text" placeholder="🔎 Búsqueda por nombre. Por ejemplo: Héctor Carramiñana" value={this.state.search} onChange={this.inputSearch} />
             </form>
         )
     }

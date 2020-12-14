@@ -18,7 +18,7 @@ class SearchBar extends Component {
     render() {
         return (
             <form style={{textAlign: 'center'}}>
-                <input style={{borderRadius: '10px', width: '70%'}} type="text" placeholder="🔎 Busca por especialidad. Web dev, UI/UX, Cyber.." value={this.state.search} onChange={this.inputSearch} />
+                <input style={{borderRadius: '10px', width: '100%', border: 'none'}} type="text" placeholder="🔎 Búsqueda por especialidad. Web dev, UI/UX, Cyber.." value={this.state.search} onChange={this.inputSearch} />
             </form>
         )
     }
