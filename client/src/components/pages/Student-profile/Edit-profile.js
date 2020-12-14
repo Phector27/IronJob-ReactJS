@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import UserService from './../../../service/user.service'
+import UserService from '../../../service/user.service'
 import { Form, Button, Col, Row, Container } from 'react-bootstrap'
-import FilesService from './../../../service/upload.service'
-import Loader from './../../shared/Loader/Loader'
+import FilesService from '../../../service/upload.service'
+import Loader from '../../shared/Loader/Loader'
 
 export default class EditProfile extends Component {
 

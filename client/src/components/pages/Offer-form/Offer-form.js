@@ -16,7 +16,7 @@ class OfferForm extends Component {
             email: '',
             description: '',
             company: '',
-            referencia: ''
+            reference: ''
         }
         this.offerService = new OfferService()
     }
@@ -37,7 +37,7 @@ class OfferForm extends Component {
         
     componentDidMount = () => {
         const randomOffer = Math.floor(Math.random() * (15 - 1)) + 1
-        this.setState({ company: this.props.loggedUser._id, name: this.props.loggedUser.name, referencia: this.props.loggedUser._id.slice(3, (randomOffer+randomOffer)) })
+        this.setState({ company: this.props.loggedUser._id, name: this.props.loggedUser.name, reference: this.props.loggedUser._id.slice(3, (randomOffer+randomOffer)) })
     }
     
     render() {
@@ -125,9 +125,9 @@ class OfferForm extends Component {
                         <Form.Control type="email" placeholder="name@example.com" minlength="6" name="email" value={this.state.email} onChange={this.handleInputChange} />
                         <small style={{ marginLeft: '10px', marginTop: '-10px' }}className="form-text text-muted"><i>Solo compartiremos tu email de contacto con el equipo de IronHack.</i></small>
                     </Form.Group>
-                    <Form.Label style={{fontWeight: 'bold', marginLeft: '10px', fontSize: '1.2em'}}>Referencia de oferta</Form.Label>
-                    <Form.Group controlId="referencia">
-                        <Form.Control style={{marginTop: '-10px'}} type="text" name="referencia" readOnly value={this.state.referencia} onChange={this.handleInputChange} /><hr />
+                    <Form.Label style={{fontWeight: 'bold', marginLeft: '10px', fontSize: '1.2em'}}>reference de oferta</Form.Label>
+                    <Form.Group controlId="reference">
+                        <Form.Control style={{marginTop: '-10px'}} type="text" name="reference" readOnly value={this.state.reference} onChange={this.handleInputChange} /><hr />
                     </Form.Group>
                     <Button variant="dark btn-block" type="submit">Crear nueva oferta de empleo</Button>
                 </Form>

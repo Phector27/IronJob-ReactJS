@@ -15,7 +15,7 @@ class OfferEdit extends Component {
             name: this.props.offer.name,
             email: this.props.offer.email,
             description: this.props.offer.description,
-            referencia: this.props.offer.referencia
+            reference: this.props.offer.reference
         }
         this.offerService = new OfferService()
     }
@@ -118,9 +118,9 @@ class OfferEdit extends Component {
                         <Form.Label>Email</Form.Label>
                         <Form.Control type="email" placeholder="name@example.com" name="email" value={this.state.email} onChange={this.handleInputChange} />
                     </Form.Group>
-                    <Form.Label style={{ fontWeight: 'bold', marginLeft: '10px', fontSize: '1.2em' }}>Referencia de oferta</Form.Label>
-                    <Form.Group controlId="referencia">
-                        <Form.Control style={{ marginTop: '-10px' }} type="text" name="referencia" readOnly value={this.state.referencia} onChange={this.handleInputChange} />
+                    <Form.Label style={{ fontWeight: 'bold', marginLeft: '10px', fontSize: '1.2em' }}>reference de oferta</Form.Label>
+                    <Form.Group controlId="reference">
+                        <Form.Control style={{ marginTop: '-10px' }} type="text" name="reference" readOnly value={this.state.reference} onChange={this.handleInputChange} />
                     </Form.Group>
                     <small className="form-text text-muted"><i>Solo compartiremos tu email de contacto con el equipo de IronHack.</i></small><hr />
                     <Button variant="dark btn-block" type="submit">Editar oferta de empleo</Button>

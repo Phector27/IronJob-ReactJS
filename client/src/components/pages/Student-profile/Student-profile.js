@@ -7,7 +7,7 @@ import WhatsApp from './../../layout/Navigation/images/WhatsApp.png'
 import email from './../../layout/Navigation/images/email.png'
 import Video from 'react-player'
 import UserService from './../../../service/user.service'
-import EditProfile from './edit-profile'
+import EditProfile from './Edit-profile'
 import './Student-profile.css'
 
 export default class StudentProfile extends Component {
