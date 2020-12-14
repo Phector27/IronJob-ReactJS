@@ -4,6 +4,7 @@ import { Container, Row, Modal } from 'react-bootstrap'
 import AllOfferCard from './All-offer-card'
 import Loader from './../../../shared/Loader/Loader'
 import ApplyForm from './../Student-apply-contact-form'
+import SearchBar from './../../../shared/Searchbar/Searchbar'
 
 class AllOffers extends Component {
 
@@ -12,7 +13,8 @@ class AllOffers extends Component {
         this.state = {
             offers: undefined,
             showApplyModal: false,
-            offerToApply: undefined
+            offerToApply: undefined,
+            offersSearch: undefined
         }
 
         this.offerService = new OfferService()
@@ -21,9 +23,16 @@ class AllOffers extends Component {
     componentDidMount = () => {
         this.offerService
             .getOffers()
-            .then(res => this.setState({ offers: res.data }))
+            .then(res => this.setState({ offers: res.data, offersSearch: res.data }))
             .catch(err => console.log(err))
     }
+    
+    searchFor = search => {
+        const copyOffers = [...this.state.offersSearch]
+        const filterProds = copyOffers.filter(elm => elm.study.toLowerCase().includes(search.toLowerCase()))
+        this.setState({ offers: filterProds }, () => console.log(this.state.offersSearch))
+      }
+
 
     handleApplyModal = (visible, offer) => this.setState({ showApplyModal: visible, offerToApply: offer })
 
@@ -33,6 +42,7 @@ class AllOffers extends Component {
                 <Container className="offer-list">
                     <h1 style={{fontWeight: '400'}}>Ofertas de trabajo publicadas</h1>
                     <hr /> <br />
+                    <SearchBar searchFor={value => this.searchFor(value)}/>
                     <br /> <br />
                     <Row>
                         {

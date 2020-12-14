@@ -3,6 +3,8 @@ import { Container, Row, Col, Button, Modal } from 'react-bootstrap'
 import linkedinImage from './../../layout/Navigation/images/pngegg.png'
 import githubLogo from './../../layout/Navigation/images/github_PNG83.png'
 import adobeLogo from './../../layout/Navigation/images/pedefe.png'
+import WhatsApp from './../../layout/Navigation/images/WhatsApp.png'
+import email from './../../layout/Navigation/images/email.png'
 import Video from 'react-player'
 import UserService from './../../../service/user.service'
 import EditProfile from './edit-profile'
@@ -29,11 +31,11 @@ export default class StudentProfile extends Component {
                     <h1 style={{marginTop: '150px'}}>Bienvenido a tu perfil, {this.props.loggedUser.name}</h1>
                     <hr />
                     <br />
-                    <Button className="btn btn-dark" style={{marginBottom: '50px'}} onClick={() => this.handleUserModal(true)}>Editar perfil ✍️</Button>
+                    <Button className="btn btn-dark" style={{ marginBottom: '50px' }} onClick={() => this.handleUserModal(true)}>Editar perfil ✍️</Button>
                     <Row className="hero-profile">
-                        <Col md={3}>
-                            <h2 style={{fontWeight: '300'}} className="username">Usuario:</h2>
-                            <h3>{this.props.loggedUser.username}</h3>
+                        <Col md={2}>
+                            <h4 style={{fontWeight: '300'}} className="username">Usuario:</h4>
+                            <h5>{this.props.loggedUser.username}</h5>
                             <img
                                 alt="User logo"
                                 src={this.props.loggedUser.profilePhoto}
@@ -41,8 +43,8 @@ export default class StudentProfile extends Component {
                             />
                         </Col>
 
-                        <Col md={3}>
-                            <h2 style={{fontWeight: '300'}} className="github">Github profile:</h2>
+                        <Col md={2}>
+                            <h4 style={{fontWeight: '300'}} className="github">Github:</h4>
                             <br />
                             <a href={this.props.loggedUser.githubProfile} target="_blank" rel="noreferrer">
                                 <img
@@ -52,8 +54,8 @@ export default class StudentProfile extends Component {
                                 />
                             </a>
                         </Col>
-                        <Col md={3}>
-                            <h2 style={{fontWeight: '300'}} className="linkedin">Linkedin profile:</h2>
+                        <Col md={2}>
+                            <h4 style={{fontWeight: '300'}} className="linkedin">Linkedin:</h4>
                             <br />
                             <a href={this.props.loggedUser.linkedInProfile} target="_blank" rel="noreferrer">
                                 <img
@@ -63,13 +65,35 @@ export default class StudentProfile extends Component {
                                 />
                             </a>
                         </Col>
-                        <Col md={3}>
-                            <h2 style={{fontWeight: '300'}} className="pdfLogo">Curriculum:</h2>
+                        <Col md={2}>
+                            <h4 style={{fontWeight: '300'}} className="pdfLogo">Curriculum:</h4>
                             <br />
                             <a href={this.props.loggedUser.cvitae} target="_blank" rel="noreferrer">
                                 <img
                                     alt="Adobe PDF logo"
                                     src={adobeLogo}
+                                    className="d-inline-block align-top"
+                                />
+                            </a>
+                        </Col>
+                        <Col md={2}>
+                            <h4 style={{fontWeight: '300'}} className="WhatsApp">WhatsApp:</h4>
+                            <br />
+                            <a href={`https://api.whatsapp.com/send?phone=${this.props.loggedUser.phoneNumber}&text=%20Hola!`} target="_blank" rel="noreferrer">
+                                <img
+                                    alt="WhatsApp logo"
+                                    src={WhatsApp}
+                                    className="d-inline-block align-top"
+                                />
+                            </a>
+                        </Col>
+                        <Col md={2}>
+                            <h4 style={{fontWeight: '300'}} className="pdfLogo">Email:</h4>
+                            <br />
+                            <a href={"mailto:" + this.props.loggedUser.email} target="_blank" rel="noreferrer">
+                                <img
+                                    alt="Email logo"
+                                    src={email}
                                     className="d-inline-block align-top"
                                 />
                             </a>

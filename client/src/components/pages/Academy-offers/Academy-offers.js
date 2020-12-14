@@ -4,6 +4,7 @@ import { Container, Row, Modal } from 'react-bootstrap'
 import OfferCard from './../Offers-list/Offer-card'
 import Loader from './../../shared/Loader/Loader'
 import OfferEdit from './../Offer-edit/Offer-edit'
+import SearchBar from './../../shared/Searchbar/Searchbar'
 
 class AcademyOffers extends Component {
 
@@ -12,6 +13,7 @@ class AcademyOffers extends Component {
         this.state = {
             offers: undefined,
             showEditModal: false,
+            offersSearch: undefined
         }
 
         this.offerService = new OfferService()
@@ -22,7 +24,7 @@ class AcademyOffers extends Component {
     refreshOfferList = () => {
         this.offerService
             .getOffers()
-            .then(res => this.setState({ offers: res.data }))
+            .then(res => this.setState({ offers: res.data, offersSearch: res.data }))
             .catch(err => console.log(err))
     }
 
@@ -35,12 +37,18 @@ class AcademyOffers extends Component {
 
     handleEditModal = (visible, offer) => this.setState({ showEditModal: visible, offerToEdit: offer })
 
+    searchFor = search => {
+        const copyOffers = [...this.state.offersSearch]
+        const filterProds = copyOffers.filter(elm => elm.study.toLowerCase().includes(search.toLowerCase()))
+        this.setState({ offers: filterProds }, () => console.log(this.state.offersSearch))
+      }
 
     render() {
         return (
             <>
                 <Container className="offer-list">
                     <h1>Ofertas de trabajo publicadas</h1>
+                    <SearchBar searchFor={value => this.searchFor(value)}/>
                     <hr /> <br />
                     <Row>
                         {

@@ -30,9 +30,9 @@ const userSchema = new Schema({
   },
   descriptionUser: {
     type: String,
-    default: ''
+    default: 'Modifica esta descripción para tener un perfil adaptado a ti :)'
   },
-  curriculum: {
+  email: {
     type: String,
     default: ''
   },
@@ -40,6 +40,7 @@ const userSchema = new Schema({
     type: String,
     default: ''
   },
+  phoneNumber: Number,
   role: {
       type: String,
       enum: ['IRONHACK-RECRUITER', 'BUSINESS-RECRUITER', 'Student', 'Guest', 'Inactive'],

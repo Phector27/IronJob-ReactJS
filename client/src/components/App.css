@@ -64,6 +64,10 @@ h1, h2, h3 {
   border-radius: 20px;
 }
 
+.offer-card img {
+  width: 25px;
+}
+
 .slider {
   width: 100vw;
 }

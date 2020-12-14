@@ -21,7 +21,7 @@ button {
 
 button:hover {
   color: #FFFFFF;
-  background: #222222;
+  background: #ebebeb;
   -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
           filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
 }

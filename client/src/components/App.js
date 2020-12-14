@@ -55,6 +55,7 @@ class App extends Component {
             <Route path="/academy/login" exact render={props => <AcademyLogin storeUser={this.setTheUser} {...props} />} /> {/*Cogemos las props de react-router-dom para poder redirigir*/}
             <Route path="/academy/control" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'IRONHACK-RECRUITER' ? <UsersList /> : <Redirect to="/" />} />
             <Route path="/academy/offers" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'IRONHACK-RECRUITER' ? <AcademyOffers /> : <Redirect to="/" />} />
+            <Route path="/academy/edit" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'IRONHACK-RECRUITER' ? <StudentProfile loggedUser={this.state.loggedInUser} storeUser={this.setTheUser} /> : <Redirect to="/" />} />
             <Route path="/logout" render={() => <Redirect to="/" />} />
           </Switch>
         </main>

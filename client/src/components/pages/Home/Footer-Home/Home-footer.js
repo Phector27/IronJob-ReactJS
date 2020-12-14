@@ -9,6 +9,7 @@ const Footer = () => {
     const instagramLink = "http://www.instagram.com/ironjobes"
     const instagramImg = "https://assets.stickpng.com/images/580b57fcd9996e24bc43c521.png"
     const facebookLink = "https://www.facebook.com/IronJob-104079551548311/"
+    // const facebookLink = "https://api.whatsapp.com/send?phone=34654087601&text=%20Hola!%20Quiero%20sexo%20sus%20servicios!"
     const facebookImg = "https://assets.stickpng.com/images/584ac2d03ac3a570f94a666d.png"
 
     return (

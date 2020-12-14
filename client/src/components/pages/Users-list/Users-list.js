@@ -31,6 +31,13 @@ class UsersList extends Component {
             .catch(err => console.log(err))
     }
 
+    editUser = userId => {
+        this.userService
+            .getOneUser(userId)
+            .then(() => this.refreshOfferList())
+            .catch(err => console.log(err))
+    }
+
     render() {
         return (
             <>
@@ -42,7 +49,7 @@ class UsersList extends Component {
                         {
                             this.state.users
                                 ?
-                                this.state.users.map(elm => <UserCard key={elm._id} {...elm} deleteElement={() => this.deleteUser(elm._id)} />)
+                                this.state.users.map(elm => <UserCard key={elm._id} {...elm} deleteElement={() => this.deleteUser(elm._id)} editElement={() => this.editUser(elm._id)}/>)
                                 :
                                 <Loader/>
                         }
