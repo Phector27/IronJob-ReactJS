@@ -9,7 +9,8 @@ class CompanyLogin extends Component {
         this.state = {
             username: '',
             password: '',
-            name: ''
+            name: '',
+            error: ''
         }
         this.authService = new AuthService()
     }
@@ -23,10 +24,9 @@ class CompanyLogin extends Component {
             .login(this.state)
             .then(theLoggedInUser => {
                 this.props.storeUser(theLoggedInUser.data)
-                this.props.history.push('/company/offers') // Propiedad recogida en react router dom, pasadas a las props de singup en App.js
-                // Si estuviesemos en un componente funcional y no de clase haríamos props.history.push
+                this.props.history.push('/company/offers') 
             })
-            .catch(err => console.log(err))
+            .catch(err=> this.setState({error: 'Error al iniciar sesión. Revisa tu usuario y contraseña.' }))
     }
     
 
@@ -46,7 +46,8 @@ class CompanyLogin extends Component {
                                 <Form.Label>Contraseña</Form.Label>
                                 <Form.Control style={{borderRadius: '20px'}} type="password" name="password" placeholder="Contraseña" value={this.state.password} onChange={this.handleInputChange} />
                             </Form.Group>
-                            <Button style={{borderRadius: '20px'}} variant="dark btn-block" type="submit">Login</Button>
+                            <Button style={{ borderRadius: '20px' }} variant="dark btn-block" type="submit">Login</Button>
+                            <h5 style={{color: 'red', textAlign: 'center'}}>{this.state.error}</h5>
                         </Form>
                     </Col>
                 </Row>

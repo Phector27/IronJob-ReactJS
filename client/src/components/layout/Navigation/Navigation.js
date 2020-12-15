@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 import { Navbar, NavDropdown, Nav } from 'react-bootstrap';
 import logo from './images/LOGO-IRONJOB-1LINE.png'
@@ -19,7 +18,7 @@ class NavbarPage extends Component {
     this.authService
       .logout()
       .then(res => this.props.storeUser(undefined))
-      .catch(err => console.log(err))
+      .catch(err => alert('No se ha podido cerrar sesión correctamente. Inténtalo de nuevo por favor.'))
   }
 
   componentDidMount() {
@@ -31,7 +30,6 @@ class NavbarPage extends Component {
   }
 
   handleScroll = e => {
-
     if (window.scrollY < 100) {
       this.setState({ color: 'transparent' })
     } else if (window.scrollY > 100) {
@@ -39,12 +37,12 @@ class NavbarPage extends Component {
     }
   }
 
-
   render() {
     return (
       <Navbar bg={this.state.color} expand="sm" fixed="top" className="menu">
         <Link to="/">
-          <Navbar.Brand><img
+          <Navbar.Brand>
+            <img
             alt="Logotipo"
             src={logo}
             className="d-inline-block align-top"
@@ -88,7 +86,6 @@ class NavbarPage extends Component {
                       </>
                   }
                 </NavDropdown>
-
                 <NavDropdown title="School" id="basic-nav-dropdown" style={{ marginLeft: '20px', fontWeight: '600' }}>
                   {
                     this.props.loggedUser.role === 'IRONHACK-RECRUITER'

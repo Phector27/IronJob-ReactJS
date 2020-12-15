@@ -19,6 +19,7 @@ export default class EditProfile extends Component {
             email: '',
             cvitae: '',
             phoneNumber: '',
+            error: '',
             uploadingPhotoActive: false,
             uploadingCvActive: false
         }
@@ -50,7 +51,7 @@ export default class EditProfile extends Component {
             .then(user => this.userService.getOneUser(user.data._id))
             .then(user => this.props.storeUser(user.data))
             .then(() => this.props.handleModal())
-            .catch(err => console.log(err))
+            .catch(err=> this.setState({error: 'Error al editar perfil. Revisa los datos introducidos' }))
     }
 
     handleFilesImage = e => {
@@ -67,7 +68,7 @@ export default class EditProfile extends Component {
                     uploadingPhotoActive: false
                 })
             })
-            .catch(err => console.log('UPLOADING ERROR', err))
+            .catch(err=> this.setState({error: 'Error al cargar el archivo. Inténtalo de nuevo.' }))
     }
 
     handleFilesCV = e => {
@@ -84,7 +85,7 @@ export default class EditProfile extends Component {
                     uploadingCvActive: false
                 })
             })
-            .catch(err => console.log('UPLOADING ERROR', err))
+            .catch(err=> this.setState({error: 'Error al cargar el archivo. Inténtalo de nuevo.' }))
     }
 
 
@@ -126,6 +127,7 @@ export default class EditProfile extends Component {
                     </Row>
                     <Form.Group controlId="profilePhoto">
                         <Form.Label style={{ marginLeft: '15px', fontWeight: '400', marginTop: '10px' }}>{this.state.uploadingPhotoActive ? <Loader /> : 'Foto de perfil:'}</Form.Label>
+                        <h5 style={{color: 'red', textAlign: 'center'}}>{this.state.error}</h5>
                         <Form.Control style={{ marginLeft: '15px' }} type="file" name="profilePhoto" onChange={this.handleFilesImage} />
                     </Form.Group>
                     <Form.Group controlId="githubProfile">
@@ -146,6 +148,7 @@ export default class EditProfile extends Component {
                     </Form.Group>
                     <Form.Group controlId="cvitae">
                         <Form.Label style={{ marginLeft: '15px', fontWeight: '400', marginTop: '10px' }}>{this.state.uploadingCvActive ? <Loader /> : 'Curriculum:'}</Form.Label>
+                        <h5 style={{color: 'red', textAlign: 'center'}}>{this.state.error}</h5>
                         <Form.Control style={{ marginLeft: '15px', marginBottom: '30px' }} type="file" name="cvitae" onChange={this.handleFilesCV} />
                     </Form.Group>
                     <Button variant="dark btn-block" type="submit">{this.state.uploadingPhotoActive || this.state.uploadingCvActive ? 'Cargando... Espera a que se suban los archivos.' : 'Actualizar perfil'}</Button>

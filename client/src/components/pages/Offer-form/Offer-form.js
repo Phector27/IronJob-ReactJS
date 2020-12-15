@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import OfferService from './../../../service/offers.service'
 import { Container, Button, Form, Row, Col } from 'react-bootstrap'
 
-
 class OfferForm extends Component {
 
     constructor(props) {
@@ -16,7 +15,8 @@ class OfferForm extends Component {
             email: '',
             description: '',
             company: '',
-            reference: ''
+            reference: '',
+            error: ''
         }
         this.offerService = new OfferService()
     }
@@ -32,7 +32,7 @@ class OfferForm extends Component {
                 this.props.updateList()
                 this.props.closeModal()
             })
-            .catch(err => console.log(err))
+            .catch(err=> this.setState({error: 'Error al editar oferta. Revisa los datos por favor.' }))
     }
         
     componentDidMount = () => {
@@ -47,6 +47,7 @@ class OfferForm extends Component {
             <Container>
                 <h1 style={{fontWeight: '400'}}>Nueva oferta de empleo</h1>
                 <hr />
+                <h5 style={{color: 'red', textAlign: 'center'}}>{this.state.error}</h5>
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Group controlId="name">
                         <Form.Label style={{marginLeft: '10px', fontSize: '1.2em', fontWeight: '300'}}>Nombre de la empresa</Form.Label>
@@ -118,14 +119,14 @@ class OfferForm extends Component {
                     </Form.Group>
                     <Form.Group controlId="description">
                         <Form.Label style={{marginLeft: '10px', fontSize: '1.2em', fontWeight: '300'}}>Descripción</Form.Label>
-                        <Form.Control as="textarea" rows={10} type="text" minlength="100" name="description" value={this.state.description} onChange={this.handleInputChange} />
+                        <Form.Control as="textarea" rows={10} type="text" placeholder="Describe tu oferta de empleo, salario anual, experiencia requerida..." name="description" value={this.state.description} onChange={this.handleInputChange} />
                     </Form.Group>
                     <Form.Group controlId="email">
                         <Form.Label style={{marginLeft: '10px', fontSize: '1.2em', fontWeight: '300'}}>Email</Form.Label>
                         <Form.Control type="email" placeholder="name@example.com" minlength="6" name="email" value={this.state.email} onChange={this.handleInputChange} />
                         <small style={{ marginLeft: '10px', marginTop: '-10px' }}className="form-text text-muted"><i>Solo compartiremos tu email de contacto con el equipo de IronHack.</i></small>
                     </Form.Group>
-                    <Form.Label style={{fontWeight: 'bold', marginLeft: '10px', fontSize: '1.2em'}}>reference de oferta</Form.Label>
+                    <Form.Label style={{fontWeight: 'bold', marginLeft: '10px', fontSize: '1.2em'}}>Referencia de oferta</Form.Label>
                     <Form.Group controlId="reference">
                         <Form.Control style={{marginTop: '-10px'}} type="text" name="reference" readOnly value={this.state.reference} onChange={this.handleInputChange} /><hr />
                     </Form.Group>

@@ -10,7 +10,8 @@ class Signup extends Component {
         this.state = {
             username: '',
             password: '',
-            name: ''
+            name: '',
+            error: ''
         }
         this.authService = new AuthService()
     }
@@ -24,10 +25,9 @@ class Signup extends Component {
             .signup(this.state.username, this.state.password, this.state.name)
             .then(theLoggedInUser => {
                 this.props.storeUser(theLoggedInUser.data)
-                this.props.history.push('/') // Propiedad recogida en react router dom, pasadas a las props de singup en App.js
-                // Si estuviesemos en un componente funcional y no de clase haríamos props.history.push
+                this.props.history.push('/') 
             })
-            .catch(err => console.log(err))
+            .catch(err => this.setState({ error: 'Usuario ya registrado.' }))
     }
 
 
@@ -55,6 +55,7 @@ class Signup extends Component {
                             </Form.Group>
                             <small style={{marginTop: '-15px', textAlign: 'center'}} className="form-text text-muted"><i> Si eres alumn@ indica nombre y apellidos.</i></small><br />
                             <Button style={{ borderRadius: '20px' }} variant="dark btn-block" type="submit">Signup</Button>
+                            <h5 style={{color: 'red', textAlign: 'center'}}>{this.state.error}</h5>
                         </Form>
                     </Col>
                 </Row>

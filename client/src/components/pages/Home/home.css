@@ -6,14 +6,14 @@
     align-items: center;
 }
 .companyText {
-    margin: 50px;
+    margin: 40px;
 }
 .companyText p {
     font-size: 1.2em;
     font-weight: 300;
-    margin-right: 3rem;
+    padding-right: 100px;
 }
 .companyText img {
-    width: 50rem;
+    width: 100%;
     align-items: center;
 }

@@ -15,7 +15,8 @@ class OfferEdit extends Component {
             name: this.props.offer.name,
             email: this.props.offer.email,
             description: this.props.offer.description,
-            reference: this.props.offer.reference
+            reference: this.props.offer.reference,
+            error: ''
         }
         this.offerService = new OfferService()
     }
@@ -31,7 +32,7 @@ class OfferEdit extends Component {
                 this.props.updateList()
                 this.props.closeModal()
             })
-            .catch(err => console.log(err))
+            .catch(err=> this.setState({error: 'Error al crear oferta de empleo. Revisa los datos' }))
     }
 
 
@@ -41,6 +42,7 @@ class OfferEdit extends Component {
             <Container>
                 <h1>Editar oferta de empleo</h1>
                 <hr />
+                <h5 style={{color: 'red', textAlign: 'center'}}>{this.state.error}</h5>
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Group controlId="name">
                         <Form.Label>Nombre de la empresa</Form.Label>
@@ -118,7 +120,7 @@ class OfferEdit extends Component {
                         <Form.Label>Email</Form.Label>
                         <Form.Control type="email" placeholder="name@example.com" name="email" value={this.state.email} onChange={this.handleInputChange} />
                     </Form.Group>
-                    <Form.Label style={{ fontWeight: 'bold', marginLeft: '10px', fontSize: '1.2em' }}>reference de oferta</Form.Label>
+                    <Form.Label style={{ fontWeight: 'bold', marginLeft: '10px', fontSize: '1.2em' }}>Referencia de oferta</Form.Label>
                     <Form.Group controlId="reference">
                         <Form.Control style={{ marginTop: '-10px' }} type="text" name="reference" readOnly value={this.state.reference} onChange={this.handleInputChange} />
                     </Form.Group>

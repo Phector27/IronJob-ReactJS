@@ -15,11 +15,13 @@ import AcademyLogin from './pages/Academy-login/Academy-login'
 import UsersList from './pages/Users-list/Users-list'
 import AcademyOffers from './pages/Academy-offers/Academy-offers'
 import ApplyOffer from './pages/Student-profile/Student-apply-offer'
-
-
+import Footer from './layout/Footer/Footer'
+import SliderSomos from './shared/Slider/Slider-somos'
+import Cookies from './pages/Cookies/Cookies'
+import Faqs from './pages/Faqs/Faqs'
+import Blog from './pages/Blog/Blog'
 
 class App extends Component {
-
   constructor() {
     super()
     this.state = { loggedInUser: undefined }
@@ -27,38 +29,42 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-
-      this.authServices
-        .isLoggedIn()
-        .then(response => this.setTheUser(response.data))
-        .catch(err => this.setTheUser(undefined))
+    this.authServices
+      .isLoggedIn()
+      .then(response => this.setTheUser(response.data))
+      .catch(err => this.setTheUser(undefined))
   }
 
-  setTheUser = user => this.setState({ loggedInUser: user }, () => console.log('El nuevo estado es:', this.state))
+  setTheUser = user => this.setState({ loggedInUser: user })
 
   render() {
-
     return (
       <>
         <NavbarPage storeUser={this.setTheUser} loggedUser={this.state.loggedInUser} />
-
         <main>
           <Switch>
             <Route path="/" exact render={() => <Home />} />
-            <Route path="/signup" render={props => <Signup storeUser={this.setTheUser} {...props} />} /> {/*Cogemos las props de react-router-dom para poder redirigir*/}
-            <Route path="/company/login" exact render={props => <CompanyLogin storeUser={this.setTheUser} {...props} />} /> {/*Cogemos las props de react-router-dom para poder redirigir*/}
-            <Route path="/company/offers" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'BUSINESS-RECRUITER' ? <OfferList loggedUser={this.state.loggedInUser}/> : <Redirect to="/" />} />
-            <Route path="/student/login" exact render={props => <StudentLogin storeUser={this.setTheUser} {...props} />} /> {/*Cogemos las props de react-router-dom para poder redirigir*/}
+            <Route path="/somos" exact render={() => <SliderSomos />} />
+            <Route path="/cookies" exact render={() => <Cookies />} />
+            <Route path="/faqs" exact render={() => <Faqs />} />
+            <Route path="/blog" exact render={() => <Blog />} />
+            <Route path="/signup" render={props => <Signup storeUser={this.setTheUser} {...props} />} />
+            <Route path="/company/login" exact render={props => <CompanyLogin storeUser={this.setTheUser} {...props} />} />
+            <Route path="/company/offers" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'BUSINESS-RECRUITER' ? <OfferList loggedUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
+            <Route path="/student/login" exact render={props => <StudentLogin storeUser={this.setTheUser} {...props} />} />
             <Route path="/student/profile" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'Student' ? <StudentProfile loggedUser={this.state.loggedInUser} storeUser={this.setTheUser} /> : <Redirect to="/" />} />
-            <Route path="/student/all-offers" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'Student' ? <AllOffers loggedUser={this.state.loggedInUser}/> : <Redirect to="/" />} />
-            <Route path="/student/apply" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'Student' ? <ApplyOffer loggedUser={this.state.loggedInUser}/> : <Redirect to="/" />} />
-            <Route path="/academy/login" exact render={props => <AcademyLogin storeUser={this.setTheUser} {...props} />} /> {/*Cogemos las props de react-router-dom para poder redirigir*/}
+            <Route path="/student/all-offers" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'Student' ? <AllOffers loggedUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
+            <Route path="/student/apply" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'Student' ? <ApplyOffer loggedUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
+            <Route path="/academy/login" exact render={props => <AcademyLogin storeUser={this.setTheUser} {...props} />} />
             <Route path="/academy/control" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'IRONHACK-RECRUITER' ? <UsersList loggedUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
             <Route path="/academy/offers" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'IRONHACK-RECRUITER' ? <AcademyOffers /> : <Redirect to="/" />} />
             <Route path="/academy/edit" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'IRONHACK-RECRUITER' ? <StudentProfile loggedUser={this.state.loggedInUser} storeUser={this.setTheUser} /> : <Redirect to="/" />} />
             <Route path="/logout" render={() => <Redirect to="/" />} />
           </Switch>
         </main>
+        <Footer loggedUser={this.state.loggedInUser} />
+        <h6 style={{ textAlign: 'center' }}>Copyrigth 2020 © - Todos los derechos reservados.</h6>
+        <p style={{ textAlign: 'center' }}>IronJob, S.L.U.</p>
       </>
     )
   }

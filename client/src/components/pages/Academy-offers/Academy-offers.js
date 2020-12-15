@@ -13,7 +13,8 @@ class AcademyOffers extends Component {
         this.state = {
             offers: undefined,
             showEditModal: false,
-            offersSearch: undefined
+            offersSearch: undefined,
+            error: ''
         }
 
         this.offerService = new OfferService()
@@ -25,14 +26,14 @@ class AcademyOffers extends Component {
         this.offerService
             .getOffers()
             .then(res => this.setState({ offers: res.data, offersSearch: res.data }))
-            .catch(err => console.log(err))
+            .catch(err => this.setState({ error: 'Error al cargar las ofertas de empleo. Prueba a recargar de nuevo.' }))
     }
 
     deleteOffer = offerId => {
         this.offerService
             .deleteOffer(offerId)
             .then(() => this.refreshOfferList())
-            .catch(err => console.log(err))
+            .catch(err => this.setState({ error: 'Error al eliminar la oferta de empleo. Prueba de nuevo.' }))
     }
 
     handleEditModal = (visible, offer) => this.setState({ showEditModal: visible, offerToEdit: offer })
@@ -40,7 +41,7 @@ class AcademyOffers extends Component {
     searchFor = search => {
         const copyOffers = [...this.state.offersSearch]
         const filterProds = copyOffers.filter(elm => elm.reference.toLowerCase().includes(search.toLowerCase()))
-        this.setState({ offers: filterProds }, () => console.log(this.state.offersSearch))
+        this.setState({ offers: filterProds })
       }
 
     render() {
@@ -51,6 +52,7 @@ class AcademyOffers extends Component {
                     <br />
                     <SearchBarIdOffer searchFor={value => this.searchFor(value)}/>
                     <hr /> <br />
+                    <h5 style={{color: 'red', textAlign: 'center'}}>{this.state.error}</h5>
                     <Row>
                         {
                             this.state.offers

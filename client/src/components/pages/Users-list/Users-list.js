@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import UserService from '../../../service/user.service'
-import { Container, Row, Button, Modal } from 'react-bootstrap'
+import { Container, Row, Modal } from 'react-bootstrap'
 import UserCard from './User-card'
 import Loader from '../../shared/Loader/Loader'
 import SearchBarName from './../../shared/Searchbar/Searchbar-name'
@@ -15,7 +15,8 @@ class UsersList extends Component {
             users: undefined,
             usersSearch: undefined,
             showEditRoleModal: false,
-            userToEdit: undefined
+            userToEdit: undefined,
+            error: ''
         }
 
         this.userService = new UserService()
@@ -32,21 +33,21 @@ class UsersList extends Component {
         this.userService
             .getUsers()
             .then(res => this.setState({ users: res.data, usersSearch: res.data }))
-            .catch(err => console.log(err))
+            .catch(err=> this.setState({error: 'Error al cargar el panel de control.' }))
     }
 
     deleteUser = userId => {
         this.userService
             .deleteUser(userId)
             .then(() => this.refreshOfferList())
-            .catch(err => console.log(err))
+            .catch(err=> this.setState({error: 'Error al eliminar usuario.' }))
     }
 
 
     searchFor = search => {
         const copyUsers = [...this.state.usersSearch]
         const filterUsers = copyUsers.filter(elm => elm.name.toLowerCase().includes(search.toLowerCase()))
-        this.setState({ users: filterUsers }, () => console.log(this.state.usersSearch))
+        this.setState({ users: filterUsers })
     }
     
     handleEditRoleModal = (visible) => this.setState({ showEditRoleModal: visible })
@@ -55,10 +56,11 @@ class UsersList extends Component {
         return (
             <>
                 <Container className="offer-list">
-                    <h1>Usuarios activos</h1>
+                    <h1 style={{fontWeight: '300'}}>Panel de control</h1>
                     <br />
                     <SearchBarName searchFor={value => this.searchFor(value)}/>
                     <hr /> <br />
+                    <h5 style={{color: 'red', textAlign: 'center'}}>{this.state.error}</h5>
                     <Row>
                         {
                             this.state.users

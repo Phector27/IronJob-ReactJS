@@ -7,9 +7,6 @@ const User = require('../models/user.model')
 const bcrypt = require('bcryptjs')
 const bcryptSalt = 10
 
-// // Sign up Form
-// router.get('/signup', (req, res, next) => res.render('auth/auth-signup'))
-
 // Sign up
 router.post('/signup', (req, res) => {
 
@@ -39,9 +36,6 @@ router.post('/signup', (req, res) => {
         })
 })
 
-// // Login Form - Company
-// router.get('/company/login', (req, res, next) => res.render('company/company-login', { errorMsg: req.flash('error') }))
-
 // Login Form
 router.post('/login', (req, res, next) => {
 
@@ -68,41 +62,8 @@ router.post('/logout', (req, res) => {
     res.status(200).json({ message: 'Cierre de sesión completado' })
 })
 
+// LoggedIn
 router.get('/loggedin', (req, res) => req.isAuthenticated() ? res.status(200).json(req.user) : res.status(403).json({message: 'Desautorizado'}))
 
-
-// // Login Form - Schools
-// router.get('/academy/login', (req, res, next) => res.render('academy/academy-login', { errorMsg: req.flash('error') }))
-
-// // Login Form Management 
-// router.post('/academy/login', passport.authenticate('local', {
-//     successRedirect: '/academy/private-academy', //are-privada/perfil
-//     failureRedirect: '/auth/academy/login',
-//     failureFlash: true,
-//     passReqToCallback: true
-// }))
-
-// // Logout - Schools
-// router.get('/academy/logout', (req, res) => {
-//     req.logout()
-//     res.redirect('/auth/academy/login')
-// })
-
-// // Login Form - Students
-// router.get('/student/login', (req, res, next) => res.render('student/student-login', { errorMsg: req.flash('error') }))
-
-// // Login Form Management - Students
-// router.post('/student/login', passport.authenticate('local', {
-//     successRedirect: '/student/private-student',
-//     failureRedirect: '/auth/student/login',
-//     failureFlash: true,
-//     passReqToCallback: true
-// }))
-
-// // Logout - Students
-// router.get('/student/logout', (req, res) => {
-//     req.logout()
-//     res.redirect('/auth/student/login')
-// })
 
 module.exports = router

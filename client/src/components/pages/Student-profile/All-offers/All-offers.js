@@ -14,7 +14,8 @@ class AllOffers extends Component {
             offers: undefined,
             showApplyModal: false,
             offerToApply: undefined,
-            offersSearch: undefined
+            offersSearch: undefined,
+            error: ''
         }
 
         this.offerService = new OfferService()
@@ -24,13 +25,13 @@ class AllOffers extends Component {
         this.offerService
             .getOffers()
             .then(res => this.setState({ offers: res.data, offersSearch: res.data }))
-            .catch(err => console.log(err))
+            .catch(err => this.setState({ error: 'Error al cargar las ofertas de empleo. Vuelve a intentarlo.' }))
     }
     
     searchFor = search => {
         const copyOffers = [...this.state.offersSearch]
         const filterProds = copyOffers.filter(elm => elm.study.toLowerCase().includes(search.toLowerCase()))
-        this.setState({ offers: filterProds }, () => console.log(this.state.offersSearch))
+        this.setState({ offers: filterProds })
       }
 
 
@@ -44,6 +45,7 @@ class AllOffers extends Component {
                     <br />
                     <SearchBar searchFor={value => this.searchFor(value)}/>
                     <hr /> <br />
+                    <h5 style={{color: 'red', textAlign: 'center'}}>{this.state.error}</h5>
                     <Row>
                         {
                             this.state.offers

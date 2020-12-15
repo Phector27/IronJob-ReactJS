@@ -1,6 +1,6 @@
 import { Container, Row, Col } from 'react-bootstrap'
 
-const Footer = () => {
+const FooterHome = () => {
 
     const ironJob = "https://ironjob.herokuapp.com/"
     const mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d538.8291110508!2d-4.457937942016209!3d40.18508319565306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4035b57551b6f3%3A0x84be095154d712f6!2sCalle%20Falsa%2C%2045908%20Aldea%20en%20Cabo%2C%20Toledo!5e0!3m2!1ses!2ses!4v1607529222158!5m2!1ses!2ses"
@@ -15,7 +15,7 @@ const Footer = () => {
 
     return (
         <section style={{ marginBottom: '100px', marginTop: '150px' }}>
-            <Container>
+            <Container >
                 <Row>
                     <Col md={{ span: 4, offset: 4 }} style={{ marginBottom: '25px' }}>
                         <a href={ironJob} className="btn btn-lg btn-block btn-outline-dark" target="blank">IronJob España</a>
@@ -25,7 +25,7 @@ const Footer = () => {
                     <iframe src={mapSrc} style={{ width: "70vw", height: "40vh", border: '0' }} title="maps"></iframe>
                 </Row>
                 <Row>
-                    <Col md={{ span: 6, offset: 3 }} style={{ marginTop: '25px', textAlign: 'center' }}>
+                    <Col md={{ span: 6, offset: 3 }} style={{ marginTop: '50px', textAlign: 'center' }}>
                         <h3>IronJob España</h3>
                         <hr />
                         <p><i>Calle falsa 123.</i></p>
@@ -49,4 +49,4 @@ const Footer = () => {
     )
 }
 
-export default Footer
+export default FooterHome
