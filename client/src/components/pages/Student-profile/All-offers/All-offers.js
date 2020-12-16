@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import OfferService from './../../../../service/offers.service'
-import { Container, Row, Modal } from 'react-bootstrap'
+import { Container, Row, Modal, Col } from 'react-bootstrap'
 import AllOfferCard from './All-offer-card'
 import Loader from './../../../shared/Loader/Loader'
 import ApplyForm from './../Student-apply-contact-form'
@@ -27,12 +27,12 @@ class AllOffers extends Component {
             .then(res => this.setState({ offers: res.data, offersSearch: res.data }))
             .catch(err => this.setState({ error: 'Error al cargar las ofertas de empleo. Vuelve a intentarlo.' }))
     }
-    
+
     searchFor = search => {
         const copyOffers = [...this.state.offersSearch]
         const filterProds = copyOffers.filter(elm => elm.study.toLowerCase().includes(search.toLowerCase()))
         this.setState({ offers: filterProds })
-      }
+    }
 
 
     handleApplyModal = (visible, offer) => this.setState({ showApplyModal: visible, offerToApply: offer })
@@ -40,12 +40,16 @@ class AllOffers extends Component {
     render() {
         return (
             <>
-                <Container className="offer-list">
+                <Container fluid className="offer-list">
                     <h1 style={{ fontWeight: '400' }}>Ofertas de trabajo publicadas</h1>
                     <br />
-                    <SearchBar searchFor={value => this.searchFor(value)}/>
+                    <Row className="justify-content-lg-center">
+                        <Col lg={6}>
+                            <SearchBar searchFor={value => this.searchFor(value)} />
+                        </Col>
+                    </Row>
                     <hr /> <br />
-                    <h5 style={{color: 'red', textAlign: 'center'}}>{this.state.error}</h5>
+                    <h5 style={{ color: 'red', textAlign: 'center' }}>{this.state.error}</h5>
                     <Row>
                         {
                             this.state.offers
@@ -59,7 +63,7 @@ class AllOffers extends Component {
 
                 <Modal className="modal-create" size="lg" show={this.state.showApplyModal} onHide={() => this.handleApplyModal(false)}>
                     <Modal.Body>
-                        <ApplyForm  closeModal={() => this.handleApplyModal(false)} loggedUser={this.state.loggedInUser} offer={this.state.offerToApply} />
+                        <ApplyForm closeModal={() => this.handleApplyModal(false)} loggedUser={this.state.loggedInUser} offer={this.state.offerToApply} />
                     </Modal.Body>
                 </Modal>
             </>

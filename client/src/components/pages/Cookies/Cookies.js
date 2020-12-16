@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 
 
 const Cookies = () => {
+
+    const christmasImage = 'https://res.cloudinary.com/phector27/image/upload/v1608124044/cv-webuild/NAVIDAD1-removebg-preview_1_qershx.png'
+
     return (
         <Container style={{marginTop: '150px', marginBottom: '100px'}}>
             <p>Esta web utiliza cookies propias y de terceros para ofrecerle una mejor experiencia y servicio. Al navegar o utilizar nuestros servicios acepta el uso que hacemos de las cookies. Sin embargo, tiene la opción de impedir la generación de cookies y la eliminación de las mismas mediante la selección de la correspondiente opción en su Navegador. En caso de bloquear el uso de cookies en su navegador es posible que algunos servicios o funcionalidades de la página Web no estén disponibles.</p>
@@ -55,8 +58,9 @@ const Cookies = () => {
             <p>En el caso de bloquear o no aceptar la instalación de cookies es posible que ciertos servicios ofrecidos por nuestro sitio web que necesitan su uso queden deshabilitados y, por lo tanto, no estén disponibles para usted por lo que no podrá aprovechar por completo todo lo que nuestras webs y aplicaciones le ofrecen. Es posible también que la calidad de funcionamiento de la página web pueda disminuir.</p>
             <p><strong>Actualizaciones en la Política de Cookies</strong></p>
             <p>Nuestra página web puede modificar esta Política de Cookies en función de exigencias legislativas, reglamentarias, o con la finalidad de adaptar dicha política a las instrucciones dictadas por la Agencia Española de Protección de Datos, por lo que se aconseja a los usuarios que la visiten periódicamente.</p>
-            <div style={{textAlign: 'center'}}>
-            <Link to="/" variant="dark" className="btn btn-dark" style={{marginTop: '25px'}}>Volver a inicio</Link>
+            <div style={{ textAlign: 'center', marginTop: '50px' }}>
+                <img style={{marginRight: '-120px'}} src={christmasImage} alt="Renus logo" />
+            <Link to="/" variant="dark" className="btn btn-dark" style={{marginTop: '31px'}}>Volver a inicio</Link>
             </div>
         </Container>
     )

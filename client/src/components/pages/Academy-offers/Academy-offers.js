@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import OfferService from './../../../service/offers.service'
-import { Container, Row, Modal } from 'react-bootstrap'
+import { Container, Row, Modal, Col } from 'react-bootstrap'
 import OfferCard from './../Offers-list/Offer-card'
 import Loader from './../../shared/Loader/Loader'
 import OfferEdit from './../Offer-edit/Offer-edit'
@@ -47,10 +47,14 @@ class AcademyOffers extends Component {
     render() {
         return (
             <>
-                <Container className="offer-list">
+                <Container fluid className="offer-list">
                     <h1>Ofertas de trabajo publicadas</h1>
                     <br />
-                    <SearchBarIdOffer searchFor={value => this.searchFor(value)}/>
+                    <Row className="justify-content-lg-center">
+                        <Col lg={6}>
+                            <SearchBarIdOffer searchFor={value => this.searchFor(value)} />
+                        </Col>
+                    </Row>
                     <hr /> <br />
                     <h5 style={{color: 'red', textAlign: 'center'}}>{this.state.error}</h5>
                     <Row>

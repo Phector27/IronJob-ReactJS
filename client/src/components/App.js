@@ -20,6 +20,7 @@ import SliderSomos from './shared/Slider/Slider-somos'
 import Cookies from './pages/Cookies/Cookies'
 import Faqs from './pages/Faqs/Faqs'
 import Blog from './pages/Blog/Blog'
+import Foro from './pages/Foro/Foro'
 
 class App extends Component {
   constructor() {
@@ -47,6 +48,7 @@ class App extends Component {
             <Route path="/somos" exact render={() => <SliderSomos />} />
             <Route path="/cookies" exact render={() => <Cookies />} />
             <Route path="/faqs" exact render={() => <Faqs />} />
+            <Route path="/foro" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'Student' ? <Foro loggedUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
             <Route path="/blog" exact render={() => <Blog />} />
             <Route path="/signup" render={props => <Signup storeUser={this.setTheUser} {...props} />} />
             <Route path="/company/login" exact render={props => <CompanyLogin storeUser={this.setTheUser} {...props} />} />

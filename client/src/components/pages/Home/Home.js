@@ -21,12 +21,12 @@ const Home = () => {
                     <Col>
                         <Parallax
                             bgImage={image1}
-                            strength={-700}>
+                            strength={1000}>
                             <div className='section2'>
                                 <h1>COLOCAMOS EL TALENTO DONDE HACE FALTA</h1>
                                 <h2>La mejor plataforma para poner el talento en el foco de sus necesidades</h2>
                             </div>
-                            <div style={{ height: 300 }}></div>
+                            <div style={{ height: 400 }}></div>
                         </Parallax>
                     </Col>
                 </Row>

@@ -18,7 +18,7 @@ const content = [
     title: "José Dorado",
     description: "Desarrollador web con un objetivo y un punto de mira: conseguir lo inalcanzable.",
     button: "Volver",
-    image: "https://res.cloudinary.com/phector27/image/upload/v1608064133/cv-webuild/romatroll_a45ib1.png",
+    image: "https://res.cloudinary.com/phector27/image/upload/v1608063371/cv-webuild/romatrollas0_1_oqumsh.png",
     userProfile: "https://media-exp1.licdn.com/dms/image/C4E03AQGs9z3NriaHGQ/profile-displayphoto-shrink_200_200/0/1605352580962?e=1613001600&v=beta&t=UISOOgK1HXFmrLTQXLOmH7rIY9tly0izdTU5sFHFmVo",
     linkedIn: "https://www.linkedin.com/in/jose-dorado/"
   }

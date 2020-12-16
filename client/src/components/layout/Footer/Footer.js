@@ -20,7 +20,8 @@ class Footer extends Component {
                         <Col sm={6} md={4} lg={2}>
                             <h6 style={{ fontSize: '.95em', textTransform: 'uppercase' }}>IronJob</h6>
                             <ul style={{ listStyle: 'none' }}>
-                                <li><a href="#slider"><Nav.Link as="div" style={{ padding: '10px 0px' }}>Inicio</Nav.Link></a></li>
+                                <li><Nav.Link as="div" style={{ padding: '10px 0px' }}><Link to="/">Inicio</Link></Nav.Link></li>
+                                <li><a href="#slider"><Nav.Link as="div" style={{ padding: '10px 0px' }}>Volver arriba</Nav.Link></a></li>
                             </ul>
                         </Col>
                         <Col sm={6} md={4} lg={2}>
@@ -40,7 +41,7 @@ class Footer extends Component {
                         <Col sm={6} md={4} lg={2}>
                             <h6 style={{ fontSize: '.95em', textTransform: 'uppercase' }}>Blog</h6>
                             <ul style={{ listStyle: 'none' }}>
-                                <li><Link to="/blog"><Nav.Link as="div" style={{ padding: '10px 0px' }}>Visita nuestro blog</Nav.Link></Link></li>
+                                <li><Link name="top" to="/blog"><Nav.Link as="div" style={{ padding: '10px 0px' }}>Visita nuestro blog</Nav.Link></Link></li>
                                 <li><Link to="/cookies"><Nav.Link as="div" style={{ padding: '10px 0px' }}>Cookies and cream</Nav.Link></Link></li>
                             </ul>
                         </Col>
@@ -48,13 +49,14 @@ class Footer extends Component {
                             <h6 style={{ fontSize: '.95em', textTransform: 'uppercase' }}>Contacto</h6>
                             <ul style={{ listStyle: 'none' }}>
                                 <li><a href="mailto: ironjobrc@gmail.com"><Nav.Link as="div" style={{ padding: '10px 0px' }}>email</Nav.Link></a></li>
-                                <li><a href="https://api.whatsapp.com/send?phone=34666666666&text=%20Hola!" target="_blank" rel="noreferrer"><Nav.Link as="div" style={{ padding: '10px 0px' }}>WhatsApp</Nav.Link></a></li>
+                                <li><a href="https://api.whatsapp.com/send?phone=34640254348&text=%20Hola!" target="_blank" rel="noreferrer"><Nav.Link as="div" style={{ padding: '10px 0px' }}>WhatsApp</Nav.Link></a></li>
                             </ul>
                         </Col>
                         <Col sm={6} md={4} lg={2}>
                             <h6 style={{ fontSize: '.95em', textTransform: 'uppercase' }}>FAQs</h6>
                             <ul style={{ listStyle: 'none' }}>
                                 <li><Link to="/faqs"><Nav.Link as="div" style={{ padding: '10px 0px' }}>Preguntas frecuentes</Nav.Link></Link></li>
+                                <li><Link to="/foro"><Nav.Link as="div" style={{ padding: '10px 0px' }}>Déjanos tu feedback</Nav.Link></Link></li>
                             </ul>
                         </Col>
                     </Row>

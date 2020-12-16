@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import OfferService from './../../../service/offers.service'
-import { Container, Row, Button, Modal, Col } from 'react-bootstrap'
+import { Container, Row, Button, Modal } from 'react-bootstrap'
 import OfferCard from './Offer-card'
 import OfferForm from './../Offer-form/Offer-form'
 import Loader from './../../shared/Loader/Loader'
@@ -22,7 +22,10 @@ class OfferList extends Component {
         this.offerService = new OfferService()
     }
 
-    componentDidMount = () => this.refreshOfferList()
+    componentDidMount = () => {
+        console.log(this.props)
+        this.refreshOfferList()
+    }
 
     refreshOfferList = () => {
         this.offerService
@@ -49,11 +52,11 @@ class OfferList extends Component {
 
         return (
             <>
-                <Container className="offer-list">
-                    <h1>Ofertas de trabajo publicadas</h1>
+                <Container fluid className="offer-list">
+                    <h1>Ofertas de trabajo publicadas por <strong>{this.props.loggedUser.name}</strong></h1>
                     <hr /> <br />
                     <div style={{ textAlign: 'center' }}>
-                        <Button className="btn btn-md" onClick={() => this.handleCreateModal(true)} variant="dark" size="lg">Crear nueva oferta de empleo 📝</Button>
+                        <Button className="btn btn-md" onClick={() => this.handleCreateModal(true)} variant="dark" size="md">Crear nueva oferta de empleo 📝</Button>
                     </div>
                     <br /> <br />
 

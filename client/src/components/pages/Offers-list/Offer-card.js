@@ -3,7 +3,7 @@ import { Col, Card, Button } from 'react-bootstrap'
 const OfferCard = ({ title, study, name, location, style, description, email, reference, deleteElement, handleModal }) => {
 
     return (
-        <Col md={6}>
+        <Col sm={12} md={6} lg={4}>
             <Card className="offer-card">
                 <Card.Header style={{textAlign: 'center'}} className="offer-title">{title}</Card.Header>
                 <Card.Body>

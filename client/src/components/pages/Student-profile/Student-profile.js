@@ -28,7 +28,7 @@ export default class StudentProfile extends Component {
         return (
             <>
                 <Container className="student-profile">
-                    <h1 style={{marginTop: '150px'}}>Bienvenido a tu perfil, {this.props.loggedUser.name}</h1>
+                    <h1 style={{marginTop: '150px'}}>Bienvenido a tu perfil, <strong>{this.props.loggedUser.name}</strong></h1>
                     <hr />
                     <br />
                     <Button className="btn btn-dark" style={{ marginBottom: '50px' }} onClick={() => this.handleUserModal(true)}>Editar perfil ✍️</Button>

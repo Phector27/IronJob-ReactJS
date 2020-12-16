@@ -1,13 +1,7 @@
 const express = require('express')
 const router = express.Router()
-// const mongoose = require('mongoose')
 
 const Offer = require('../models/offer.model')
-
-
-// const isLogged = (req, res, next) => req.isAuthenticated() ? next() : res.render('company/company-login', { errorMsg: 'Acceso denegado. Haz login para acceder a esta zona de la web.' })
-// const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(req.user.role) ? next() : res.render('company/company-login', { errorMsg: 'Acceso denegado. No tienes permisos para ver esta zona de la web. Por favor, contacta con un administrador de IronHack para que modifique tus permisos.' })
-
 
 router.get('/getAllOffers', (req, res) => {
 

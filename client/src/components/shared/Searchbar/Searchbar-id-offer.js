@@ -18,7 +18,7 @@ class SearchBarIdOffer extends Component {
     render() {
         return (
             <form style={{textAlign: 'center'}}>
-                <input style={{borderRadius: '10px', width: '100%', border: 'none'}} type="text" placeholder="🔎 Búsqueda por reference. Por ejemplo: 96f4dfc" value={this.state.search} onChange={this.inputSearch} />
+                <input style={{borderRadius: '10px', width: '100%', border: 'none'}} type="text" placeholder="🔎 Búsqueda por referencia. Por ejemplo: 96f4dfc" value={this.state.search} onChange={this.inputSearch} />
             </form>
         )
     }
