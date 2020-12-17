@@ -3,7 +3,6 @@ import UserService from '../../../service/user.service'
 import { Form, Button, Col, Row, Container } from 'react-bootstrap'
 import FilesService from '../../../service/upload.service'
 import Loader from '../../shared/Loader/Loader'
-
 export default class EditProfile extends Component {
 
     constructor(props) {
