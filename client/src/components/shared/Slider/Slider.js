@@ -45,7 +45,7 @@ const Slider1 = () => (
           style={{ background: `url('${item.image}') no-repeat center center` }}
         >
           <div className="inner">
-            <h1 style={{ fontWeight: 'bold' }}>{item.title}</h1>
+            <h1 style={{ fontWeight: '400' }}>{item.title}</h1>
             <p style={{ fontSize: '1.3rem' }}>{item.description}</p>
             <button><a href="#conocenos" style={{ textDecoration: 'none', color: 'black', textTransform: 'none' }}>{item.button}</a></button>
           </div>

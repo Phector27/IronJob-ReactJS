@@ -21,6 +21,7 @@ import Cookies from './pages/Cookies/Cookies'
 import Faqs from './pages/Faqs/Faqs'
 import Blog from './pages/Blog/Blog'
 import Foro from './pages/Foro/Foro'
+import Welcome from './pages/Welcome/Welcome'
 
 class App extends Component {
   constructor() {
@@ -45,23 +46,24 @@ class App extends Component {
         <main>
           <Switch>
             <Route path="/" exact render={() => <Home />} />
-            <Route path="/somos" exact render={() => <SliderSomos />} />
-            <Route path="/cookies" exact render={() => <Cookies />} />
-            <Route path="/faqs" exact render={() => <Faqs />} />
-            <Route path="/foro" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'Student' ? <Foro loggedUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
-            <Route path="/blog" exact render={() => <Blog />} />
-            <Route path="/signup" render={props => <Signup storeUser={this.setTheUser} {...props} />} />
+            <Route path="/somos" render={() => <SliderSomos />} />
+            <Route path="/cookies" render={() => <Cookies />} />
+            <Route path="/faqs" render={() => <Faqs />} />
+            <Route path="/foro" render={() => this.state.loggedInUser && this.state.loggedInUser.role != 'BUSINESS-RECRUITER' ? <Foro loggedUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
+            <Route path="/blog" render={() => <Blog />} />
+            <Route path="/welcome" render={() => <Welcome />} />
+            <Route path="/signup" exact render={props => <Signup storeUser={this.setTheUser} {...props} />} />
             <Route path="/company/login" exact render={props => <CompanyLogin storeUser={this.setTheUser} {...props} />} />
-            <Route path="/company/offers" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'BUSINESS-RECRUITER' ? <OfferList loggedUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
+            <Route path="/company/offers" render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'BUSINESS-RECRUITER' ? <OfferList loggedUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
             <Route path="/student/login" exact render={props => <StudentLogin storeUser={this.setTheUser} {...props} />} />
-            <Route path="/student/profile" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'Student' ? <StudentProfile loggedUser={this.state.loggedInUser} storeUser={this.setTheUser} /> : <Redirect to="/" />} />
-            <Route path="/student/all-offers" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'Student' ? <AllOffers loggedUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
-            <Route path="/student/apply" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'Student' ? <ApplyOffer loggedUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
+            <Route path="/student/profile" render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'Student' ? <StudentProfile loggedUser={this.state.loggedInUser} storeUser={this.setTheUser} /> : <Redirect to="/" />} />
+            <Route path="/student/all-offers" render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'Student' ? <AllOffers loggedUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
+            <Route path="/student/apply" render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'Student' ? <ApplyOffer loggedUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
             <Route path="/academy/login" exact render={props => <AcademyLogin storeUser={this.setTheUser} {...props} />} />
-            <Route path="/academy/control" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'IRONHACK-RECRUITER' ? <UsersList loggedUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
-            <Route path="/academy/offers" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'IRONHACK-RECRUITER' ? <AcademyOffers /> : <Redirect to="/" />} />
-            <Route path="/academy/edit" exact render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'IRONHACK-RECRUITER' ? <StudentProfile loggedUser={this.state.loggedInUser} storeUser={this.setTheUser} /> : <Redirect to="/" />} />
-            <Route path="/logout" render={() => <Redirect to="/" />} />
+            <Route path="/academy/control" render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'IRONHACK-RECRUITER' ? <UsersList loggedUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
+            <Route path="/academy/offers" render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'IRONHACK-RECRUITER' ? <AcademyOffers /> : <Redirect to="/" />} />
+            <Route path="/academy/edit" render={() => this.state.loggedInUser && this.state.loggedInUser.role === 'IRONHACK-RECRUITER' ? <StudentProfile loggedUser={this.state.loggedInUser} storeUser={this.setTheUser} /> : <Redirect to="/" />} />
+            <Route path="/logout" exact render={() => <Redirect to="/" />} />
           </Switch>
         </main>
         <Footer loggedUser={this.state.loggedInUser} />

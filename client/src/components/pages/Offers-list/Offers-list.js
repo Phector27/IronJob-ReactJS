@@ -45,11 +45,8 @@ class OfferList extends Component {
 
     handleEditModal = (visible, offer) => this.setState({ showEditModal: visible, offerToEdit: offer })
 
-
     render() {
-
         const offersCopy = this.state.offers ? this.state.offers.filter(elm => elm.company === this.props.loggedUser._id) : <Loader />
-
         return (
             <>
                 <Container fluid className="offer-list">
@@ -59,7 +56,6 @@ class OfferList extends Component {
                         <Button className="btn btn-md" onClick={() => this.handleCreateModal(true)} variant="dark" size="md">Crear nueva oferta de empleo 📝</Button>
                     </div>
                     <br /> <br />
-
                     <Row>
                             {
                                 this.state.offers
@@ -70,20 +66,17 @@ class OfferList extends Component {
                             }
                     </Row>
                 </Container>
-
                 <Modal className="modal-create" size="lg" show={this.state.showCreateModal} onHide={() => this.handleCreateModal(false)}>
                     <Modal.Body>
                         <OfferForm closeModal={() => this.handleCreateModal(false)} updateList={this.refreshOfferList} loggedUser={this.props.loggedUser} />
                     </Modal.Body>
                 </Modal>
-
                 <Modal className="modal-create" size="lg" show={this.state.showEditModal} onHide={() => this.handleEditModal(false)}>
                     <Modal.Body>
                         <OfferEdit closeModal={() => this.handleEditModal(false)} updateList={this.refreshOfferList} offer={this.state.offerToEdit} />
                     </Modal.Body>
                 </Modal>
             </>
-
         )
     }
 }

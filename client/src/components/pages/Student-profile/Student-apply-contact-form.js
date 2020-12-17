@@ -15,7 +15,6 @@ export default function ApplyForm(props) {
         const uploadData = new FormData()
         uploadData.append(e.target.name, e.target.files[0])
 
-
         filesService
             .uploadFile(uploadData)
             .then(response => {
@@ -31,7 +30,7 @@ export default function ApplyForm(props) {
 
         emailjs.sendForm('service_9nz4mw7', 'template_jirrpvh', e.target, 'user_RA5RHpy3xvtV1TXFIqtIL')
             .then((result) => {
-                alert('Tu mensaje ha sido enviado con éxito. Mucha suerte!');
+                props.showToast()
             }, (error) => {
                 console.log(error.text);
             });

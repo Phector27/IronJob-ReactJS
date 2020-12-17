@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import AuthService from './../../../service/auth.service'
 import { Container, Button, Form, Col, Row } from 'react-bootstrap'
 
-
 class Signup extends Component {
 
     constructor() {
@@ -25,15 +24,13 @@ class Signup extends Component {
             .signup(this.state.username, this.state.password, this.state.name)
             .then(theLoggedInUser => {
                 this.props.storeUser(theLoggedInUser.data)
-                this.props.history.push('/') 
+                this.props.history.push('/welcome') 
             })
             .catch(err => this.setState({ error: 'Usuario ya registrado.' }))
     }
 
-
     render() {
         return (
-
             <Container className="form">
                 <Row>
                     <Col md={{ span: 4, offset: 4 }}>

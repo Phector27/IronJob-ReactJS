@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-
 const Offer = require('../models/offer.model')
 
 router.get('/getAllOffers', (req, res) => {
@@ -10,7 +9,6 @@ router.get('/getAllOffers', (req, res) => {
         .then(response => res.json(response))
         .catch(err => res.status(500).json(err))
 })
-
 
 router.post('/newOffer', (req, res) => {
 
@@ -26,7 +24,6 @@ router.post('/newOffer', (req, res) => {
         .catch(err => res.status(500).json(err))
 })
 
-
 router.delete('/delete/:offer_id', (req, res) => {
 
     Offer
@@ -35,7 +32,6 @@ router.delete('/delete/:offer_id', (req, res) => {
         .catch(err => res.status(500).json(err))
     
 })
-
 
 router.get('/getOneOffer/:offer_id', (req, res) => {
 
@@ -47,10 +43,8 @@ router.get('/getOneOffer/:offer_id', (req, res) => {
     Offer
         .findById(req.params.offer_id)
         .then(response => res.json(response))
-        .catch(err => res.status(500).json(err))
-    
+        .catch(err => res.status(500).json(err))  
 })
-
 
 router.put('/editOffer/:offer_id', (req, res, next) => {
 
@@ -62,6 +56,5 @@ router.put('/editOffer/:offer_id', (req, res, next) => {
         .catch(err => res.status(500).json(err))
     
 })
-
 
 module.exports = router

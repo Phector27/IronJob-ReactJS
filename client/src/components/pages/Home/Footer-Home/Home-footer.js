@@ -43,7 +43,6 @@ const FooterHome = () => {
                         </Col>
                     </article>
                 </Row>
-
             </Container>
         </section>
     )

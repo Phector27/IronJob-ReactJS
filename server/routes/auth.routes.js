@@ -7,7 +7,6 @@ const User = require('../models/user.model')
 const bcrypt = require('bcryptjs')
 const bcryptSalt = 10
 
-// Sign up
 router.post('/signup', (req, res) => {
 
     const { username, password, name } = req.body
@@ -36,7 +35,6 @@ router.post('/signup', (req, res) => {
         })
 })
 
-// Login Form
 router.post('/login', (req, res, next) => {
 
     passport.authenticate('local', (err, theUser, failureDetails) => {
@@ -56,14 +54,11 @@ router.post('/login', (req, res, next) => {
     })(req, res, next)
 })
 
-// Logout
 router.post('/logout', (req, res) => {
     req.logout()
     res.status(200).json({ message: 'Cierre de sesión completado' })
 })
 
-// LoggedIn
 router.get('/loggedin', (req, res) => req.isAuthenticated() ? res.status(200).json(req.user) : res.status(403).json({message: 'Desautorizado'}))
-
 
 module.exports = router

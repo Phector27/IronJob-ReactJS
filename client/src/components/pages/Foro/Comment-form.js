@@ -8,7 +8,7 @@ class CommentForm extends Component {
         super(props)
         this.state = {
             comment: '',
-            username: '',
+            photo: '',
             student: '',
             error: ''
         }
@@ -29,12 +29,10 @@ class CommentForm extends Component {
             .catch(err => this.setState({ error: 'Error al comentar. Por favor, revisa los pasos realizados.' }))
     }
 
-    componentDidMount = () => this.setState({ student: this.props.loggedUser._id, username: this.props.loggedUser.username })
+    componentDidMount = () => this.setState({ student: this.props.loggedUser.username, photo: this.props.loggedUser.profilePhoto })
 
     render() {
-
         return (
-
             <Container>
                 <h1 style={{ fontWeight: '400' }}>Publica tu comentario!</h1>
                 <hr />

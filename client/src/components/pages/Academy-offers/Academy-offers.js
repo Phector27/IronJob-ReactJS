@@ -14,6 +14,9 @@ class AcademyOffers extends Component {
             offers: undefined,
             showEditModal: false,
             offersSearch: undefined,
+            mixChecked: false,
+            remoteChecked: false,
+            presentialChecked: false,
             error: ''
         }
 
@@ -42,7 +45,25 @@ class AcademyOffers extends Component {
         const copyOffers = [...this.state.offersSearch]
         const filterProds = copyOffers.filter(elm => elm.reference.toLowerCase().includes(search.toLowerCase()))
         this.setState({ offers: filterProds })
-      }
+    }
+    
+    handleRemote = () => {
+        const remoteOffers = this.state.offersSearch
+        const copy2Offers = remoteOffers.filter(elm => elm.style === 'Remoto')
+        this.state.remoteChecked ? this.setState({ offers: copy2Offers }) : this.setState({ offers: remoteOffers })
+    }
+
+    handlePersonal = () => {
+        const remoteOffers = this.state.offersSearch
+        const copy2Offers = remoteOffers.filter(elm => elm.style === 'Presencial')
+        this.state.presentialChecked ? this.setState({ offers: copy2Offers }) : this.setState({ offers: remoteOffers })
+    }
+
+    handleMix = () => {
+        const remoteOffers = [...this.state.offersSearch]
+        const copy2Offers = remoteOffers.filter(elm => elm.style === 'Mixto')
+        this.state.mixChecked ? this.setState({ offers: copy2Offers }) : this.setState({ offers: remoteOffers })
+    }
 
     render() {
         return (
@@ -53,6 +74,35 @@ class AcademyOffers extends Component {
                     <Row className="justify-content-lg-center">
                         <Col lg={6}>
                             <SearchBarIdOffer searchFor={value => this.searchFor(value)} />
+                        </Col>
+                    </Row>
+                    <Row style={{ marginTop: '25px' }} className="justify-content-lg-center">
+                        <Col lg={{ span: 4, offset: 2 }}>
+                            <p style={{ fontWeight: '400', marginLeft: '100px' }}>Filtrar por:</p>
+                            <label>
+                                Remoto:
+                                <input
+                                    onClick={() => this.setState({remoteChecked: !this.state.remoteChecked}, () => this.handleRemote())}
+                                    name="Remoto"
+                                    type="checkbox"
+                                     />
+                            </label>
+                            <label style={{ marginLeft: '20px' }}>
+                                Presencial:
+                                <input
+                                    onClick={() => this.setState({presentialChecked: !this.state.presentialChecked}, () => this.handlePersonal())}
+                                    name="Presencial"
+                                    type="checkbox"
+                                     />
+                            </label>
+                            <label style={{ marginLeft: '20px' }}>
+                                Mixto:
+                                <input
+                                    onClick={() => this.setState({mixChecked: !this.state.mixChecked}, () => this.handleMix())}
+                                    name="Mixto"
+                                    type="checkbox"
+                                    />
+                            </label>
                         </Col>
                     </Row>
                     <hr /> <br />
@@ -67,14 +117,12 @@ class AcademyOffers extends Component {
                         }
                     </Row>
                 </Container>
-
                 <Modal className="modal-create" size="lg" show={this.state.showEditModal} onHide={() => this.handleEditModal(false)}>
                     <Modal.Body>
                         <OfferEdit closeModal={() => this.handleEditModal(false)} updateList={this.refreshOfferList} offer={this.state.offerToEdit} />
                     </Modal.Body>
                 </Modal>
             </>
-
         )
     }
 }

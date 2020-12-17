@@ -30,10 +30,8 @@ class AcademyLogin extends Component {
             .catch(err=> this.setState({error: 'Error al iniciar sesión. Revisa tu usuario y contraseña.' }))
     }
 
-
     render() {
         return (
-
             <Container className="form">
                 <Row>
                     <Col md={{span: 4, offset: 4}}>

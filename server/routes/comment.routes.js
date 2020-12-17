@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-
 const Comment = require('../models/comment.model')
 
 router.get('/getAllComments', (req, res) => {
@@ -11,17 +10,15 @@ router.get('/getAllComments', (req, res) => {
         .catch(err => res.status(500).json(err))
 })
 
-
 router.post('/newComment', (req, res) => {
 
-    const { comment, valoration } = req.body
+    const { comment, valoration, student, photo } = req.body
 
     Comment
-        .create({ comment, valoration } )
+        .create({ comment, valoration, student, photo } )
         .then(response => res.json(response))
         .catch(err => res.status(500).json(err))
 })
-
 
 router.delete('/delete/:comment_id', (req, res) => {
 
@@ -42,20 +39,5 @@ router.put('/editComment/:comment_id', (req, res, next) => {
         .catch(err => res.status(500).json(err))
     
 })
-
-// router.get('/getOneOffer/:offer_id', (req, res) => {
-
-//     if (!mongoose.Types.ObjectId.isValid(req.params.offer_id)) {
-//         res.status(404).json({ message: 'Invalid ID' })
-//         return
-//     }
-
-//     Comment
-//         .findById(req.params.offer_id)
-//         .then(response => res.json(response))
-//         .catch(err => res.status(500).json(err))
-    
-// })
-
 
 module.exports = router

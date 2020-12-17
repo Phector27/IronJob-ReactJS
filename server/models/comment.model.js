@@ -4,7 +4,14 @@ const Schema = mongoose.Schema
 const commentSchema = new Schema({
 
     comment: String,
-    student: String,
+    student: {
+        type: Schema.Types.String,
+        ref: 'User'
+    },
+    photo: {
+        type: Schema.Types.String,
+        ref: 'User'
+    },
     valoration: String
 }, { timestamps: true })
 

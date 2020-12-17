@@ -21,9 +21,9 @@ class Foro extends Component {
         this.commentService = new CommentService()
     }
 
-    componentDidMount = () => this.refreshOfferList()
+    componentDidMount = () => this.refreshCommentList()
 
-    refreshOfferList = () => {
+    refreshCommentList = () => {
         this.commentService
             .getComments()
             .then(res => this.setState({ comments: res.data }))
@@ -33,7 +33,7 @@ class Foro extends Component {
     deleteComment = commentId => {
         this.commentService
             .deleteComment(commentId)
-            .then(() => this.refreshOfferList())
+            .then(() => this.refreshCommentList())
             .catch(err => this.setState({ error: 'Error al eliminar la oferta de empleo. Prueba de nuevo.' }))
     }
 
@@ -41,9 +41,7 @@ class Foro extends Component {
 
     handleEditModal = (visible, comment) => this.setState({ showEditModal: visible, commentToEdit: comment })
 
-
     render() {
-
         return (
             <>
                 <Container className="offer-list">
@@ -68,13 +66,13 @@ class Foro extends Component {
 
                 <Modal className="modal-create" size="lg" show={this.state.showCreateModal} onHide={() => this.handleCreateModal(false)}>
                     <Modal.Body>
-                        <CommentForm closeModal={() => this.handleCreateModal(false)} updateList={this.refreshOfferList} loggedUser={this.props.loggedUser} />
+                        <CommentForm closeModal={() => this.handleCreateModal(false)} updateList={this.refreshCommentList} loggedUser={this.props.loggedUser} />
                     </Modal.Body>
                 </Modal>
 
                 <Modal className="modal-create" size="lg" show={this.state.showEditModal} onHide={() => this.handleEditModal(false)}>
                     <Modal.Body>
-                        <CommentEdit closeModal={() => this.handleEditModal(false)} updateList={this.refreshOfferList} loggedUser={this.props.loggedUser} comment={this.state.commentToEdit} />
+                        <CommentEdit closeModal={() => this.handleEditModal(false)} updateList={this.refreshCommentList} loggedUser={this.props.loggedUser} comment={this.state.commentToEdit} />
                     </Modal.Body>
                 </Modal>
             </>

@@ -88,9 +88,7 @@ export default class EditProfile extends Component {
             .catch(err=> this.setState({error: 'Error al cargar el archivo. Inténtalo de nuevo.' }))
     }
 
-
     render() {
-
         return (
             <Container>
                 <Form onSubmit={this.handleSubmit}>

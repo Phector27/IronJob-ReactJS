@@ -1,7 +1,6 @@
 import { Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-
 const Cookies = () => {
 
     const christmasImage = 'https://res.cloudinary.com/phector27/image/upload/v1608124044/cv-webuild/NAVIDAD1-removebg-preview_1_qershx.png'

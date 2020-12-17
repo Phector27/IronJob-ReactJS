@@ -1,7 +1,6 @@
 import { Parallax } from 'react-parallax'
 import { Container, Row, Col } from 'react-bootstrap'
 import Post from './Post'
-import './Blog.css'
 
 const bgblog = 'https://res-console.cloudinary.com/phector27/thumbnails/transform/v1/image/upload//v1608136637/Y3Ytd2VidWlsZC9waG90by0xNTg2NTY4NzQwODQ4LTkyOWEwNzU4Yjk2NF94YnFtaWg=/drilldown'
 

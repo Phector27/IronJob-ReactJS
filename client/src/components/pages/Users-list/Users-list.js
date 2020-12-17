@@ -6,7 +6,6 @@ import Loader from '../../shared/Loader/Loader'
 import SearchBarName from './../../shared/Searchbar/Searchbar-name'
 import RoleEdit from './../../Users-edit/User-edit'
 
-
 class UsersList extends Component {
 
     constructor(props) {
@@ -43,7 +42,6 @@ class UsersList extends Component {
             .catch(err=> this.setState({error: 'Error al eliminar usuario.' }))
     }
 
-
     searchFor = search => {
         const copyUsers = [...this.state.usersSearch]
         const filterUsers = copyUsers.filter(elm => elm.name.toLowerCase().includes(search.toLowerCase()))
@@ -53,6 +51,7 @@ class UsersList extends Component {
     handleEditRoleModal = (visible) => this.setState({ showEditRoleModal: visible })
 
     render() {
+        const sortUsers = this.state.users ? this.state.users.sort((a, b) => (a.role > b.role) ? 1 : -1) : <Loader />
         return (
             <>
                 <Container className="offer-list">
@@ -65,13 +64,12 @@ class UsersList extends Component {
                         {
                             this.state.users
                                 ?
-                                this.state.users.map(elm => <UserCard key={elm._id} {...elm} deleteElement={() => this.deleteUser(elm._id)} defineUser={id => this.openRoleEditModal(id)}/>)
+                                sortUsers.map(elm => <UserCard key={elm._id} {...elm} deleteElement={() => this.deleteUser(elm._id)} defineUser={id => this.openRoleEditModal(id)}/>)
                                 :
                                 <Loader/>
                         }
                     </Row>
                 </Container>
-
                 <Modal className="modal-create" size="md" show={this.state.showEditRoleModal} onHide={() => this.handleEditRoleModal(false)}>
                     <Modal.Body>
                         <RoleEdit closeModal={() => this.handleEditRoleModal(false)} userId={this.state.userToEdit} updateList={this.refreshOfferList} />

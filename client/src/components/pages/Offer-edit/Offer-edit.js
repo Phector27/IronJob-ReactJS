@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import OfferService from './../../../service/offers.service'
 import { Container, Button, Form, Row, Col } from 'react-bootstrap'
 
-
 class OfferEdit extends Component {
 
     constructor(props) {
@@ -35,10 +34,8 @@ class OfferEdit extends Component {
             .catch(err=> this.setState({error: 'Error al crear oferta de empleo. Revisa los datos' }))
     }
 
-
     render() {
         return (
-
             <Container>
                 <h1>Editar oferta de empleo</h1>
                 <hr />

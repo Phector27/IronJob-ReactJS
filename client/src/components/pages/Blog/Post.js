@@ -1,7 +1,6 @@
 import { Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-
 const Post = () => {
     const christmasImage = 'https://res.cloudinary.com/phector27/image/upload/v1608123052/cv-webuild/NAVIDAD1-removebg-preview_wc2jiv.png'
     return (

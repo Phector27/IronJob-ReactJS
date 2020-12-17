@@ -28,7 +28,6 @@ class StudentLogin extends Component {
             })
             .catch(err=> this.setState({error: 'Error al iniciar sesión. Revisa tu usuario y contraseña.' }))
     }
-    
 
     render() {
         return (

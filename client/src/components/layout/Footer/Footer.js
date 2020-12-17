@@ -3,7 +3,6 @@ import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import './Footer.css'
 
-
 class Footer extends Component {
     constructor(props) {
         super(props)
@@ -11,7 +10,6 @@ class Footer extends Component {
             loggedUser: this.props.theUser
         }
     }
-
     render() {
         return (
             <Navbar style={{ paddingBottom: '50px', paddingTop: '50px', marginTop: '100px', borderTop: '.5px dashed lightgray' }} className="navFooter" variant="dark">
@@ -61,7 +59,7 @@ class Footer extends Component {
                         </Col>
                     </Row>
                 </Container>
-            </Navbar >
+            </Navbar>
         )
     }
 }

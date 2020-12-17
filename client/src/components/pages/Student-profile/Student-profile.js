@@ -24,7 +24,6 @@ export default class StudentProfile extends Component {
     handleUserModal = visible => this.setState({ showEditUserModal: visible })
 
     render() {
-
         return (
             <>
                 <Container className="student-profile">
@@ -111,7 +110,6 @@ export default class StudentProfile extends Component {
                         </Col>
                     </Row>
                 </Container>
-
                 <Container style={{marginBottom: '100px'}}>
                     <h4 className="handwriting" style={{textAlign: 'center'}}>El talento gana partidos, pero el trabajo en equipo y la inteligencia ganan campeonatos. — <i><b>Michael Jordan</b></i></h4>
                 </Container>

@@ -41,9 +41,7 @@ class OfferForm extends Component {
     }
     
     render() {
-        
         return (
-
             <Container>
                 <h1 style={{fontWeight: '400'}}>Nueva oferta de empleo</h1>
                 <hr />

@@ -29,7 +29,6 @@ class CommentEdit extends Component {
             .catch(err=> this.setState({error: 'Error al editar tu comentario. Revisa los datos' }))
     }
 
-
     render() {
         return (
 

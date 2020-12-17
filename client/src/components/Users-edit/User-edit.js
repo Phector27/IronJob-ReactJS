@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import UserService from './../../service/user.service'
 import { Container, Button, Form } from 'react-bootstrap'
 
-
 class RoleEdit extends Component {
 
     constructor(props) {

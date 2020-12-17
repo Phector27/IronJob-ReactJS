@@ -11,8 +11,6 @@ class SearchBarIdOffer extends Component {
     inputSearch = e => {
         const { value } = e.target
         this.setState({search: value}, () => this.props.searchFor(e.target.value))
-        
-        
     }
 
     render() {

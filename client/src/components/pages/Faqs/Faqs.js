@@ -1,7 +1,6 @@
 import { Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-
 const Faqs = () => {
     const stonesImage = 'https://res.cloudinary.com/phector27/image/upload/v1608132849/cv-webuild/Pngtree_free_cartoon_of_a_pile_4730609_wtsjhi.png'
     const christmasImage = 'https://res.cloudinary.com/phector27/image/upload/v1608134958/cv-webuild/111_hp2quq.png'
