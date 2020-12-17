@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Montserrat;
+  font-weight: 200;
+  background-color: #EBEBEB;
+  overflow-x: hidden;
+}
+
+.logo-container img{
+  max-height: 40px;
+}
+
+#rotate {
+  transform: rotate(-40deg); 
+}
+
+#rotate2 {
+  transform: rotate(40deg); 
+}
+
+#rotate3 {
+  transform: rotate(40deg); 
+}
+
+.section2 h1 {
+  position: relative;
+  font-weight: 600;
+  margin-top: 400px;
+  color: #EBEBEB;
+}
+
+.section2 h2 {
+  position: relative;
+  font-style: italic;
+  font-weight: 300;
+  text-align: center;
+  color: #EBEBEB;
+}
+
+h1, h2, h3 {
+  font-weight: 200;
+}
+
+.link {
+  list-style: none;
+  text-decoration: none;
+  color: black;
+  text-transform: none;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.contactUs {
+  margin: 20px;
+  border-radius: 20px;
+}
+
+
+.form-control {
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.btn-apply {
+  border-radius: 20px;
+}
+
+.offer-card img {
+  width: 25px;
+}
+
+.slider {
+  width: 100vw;
+}
+
+.menu {
+  padding: 15px 40px 10px 40px;
+  padding-bottom: 12px;
+  position: fixed;
+  width: 100vw;
+  transition: all 2s;
+}
+
+.menu img {
+  width: 60%; 
+}
+.menu a {
+  color: black;
+  font-weight: lighter; 
+}
+
+.form {
+  margin-top: 150px;
+  margin-bottom: 350px;
+}
+
+.profile img {
+  width: 40px;
+  height: 40px;
+  border: solid 2px rgba(255, 255, 255, 0.5);
+  border-radius: 100%;
+  vertical-align: middle;
+}
+
+.handwriting {
+  font-family: 'Dancing Script', cursive;
+}
+
+.student-profile img {
+  width: 75px;
+  height: 75px;
+  display: block;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.twitter img {
+  width: 5%;
+}
+
+.instagram img {
+  width: 3.5%;
+  margin-right: 30px;
+  margin-left: 20px;
+}
+
+.facebook img{
+  width: 3%;
+}
+
+.whatsapp img {
+  width: 4%;
+  margin-left: 25px;
+}
+
+.RRSS {
+  text-align: center;
+}
+
+html {
+  scroll-behavior: smooth;
+}

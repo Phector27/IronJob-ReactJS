@@ -1,0 +1,19 @@
+.motivational {
+    text-align: center;
+    margin: 100px 130px 100px 130px;
+    font-size: 40px;
+    color: black;
+    align-items: center;
+}
+.companyText {
+    margin: 40px;
+}
+.companyText p {
+    font-size: 1.2em;
+    font-weight: 300;
+    padding-right: 100px;
+}
+.companyText img {
+    width: 100%;
+    align-items: center;
+}
