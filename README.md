@@ -69,7 +69,7 @@ A lightweight, modern and functional index page. This design shows the capabilit
 
 **7. Are you a student? Apply to the offers and see your complete profile to get more options to apply**
 
-![StudentProfile](https://res.cloudinary.com/phector27/image/upload/v1608644537/cv-webuild/profile_c3h0qe.png)
+![StudentProfile](https://res.cloudinary.com/phector27/image/upload/v1608645573/cv-webuild/profile2_tbflqv.png)
 
 ![EditProfile](https://res.cloudinary.com/phector27/image/upload/v1608644975/cv-webuild/myprofile2_pilnbs.png)
 
