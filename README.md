@@ -3,7 +3,7 @@
 
 New ReactJS platform for contact between young talents who have studied at IronHack and companies interested in attracting new talent.
 
-Created by: **Héctor Carramiñana && José Dorado**.
+Created by: **Héctor Carramiñana**.
 
 A platform with three different accesses and registers:
 
@@ -73,15 +73,15 @@ A lightweight, modern and functional index page. This design shows the capabilit
 
 ![EditProfile](https://res.cloudinary.com/phector27/image/upload/v1608644975/cv-webuild/myprofile2_pilnbs.png)
 
-**Apply in offers that you want. It's soooooo easy :)
+**Apply in offers that you want. It's soooooo easy :)**
 
 ![ApplyOffers](https://res.cloudinary.com/phector27/image/upload/v1608644710/cv-webuild/apply_zdgbgm.png)
 
 **8. IronHack? This is a private area where IronHack administrators can change user permissions, delete them and delete job offers as well.**
 
-![offersiron](https://i.ibb.co/XbDPMLm/offersiron.png)
+![EditOffers](https://res.cloudinary.com/phector27/image/upload/v1608645303/cv-webuild/edit_kj0vhv.png)
 
-![offersiron2](https://i.ibb.co/vQZV2bD/editpermissions.png)
+![ControlPanel](https://res.cloudinary.com/phector27/image/upload/v1608645303/cv-webuild/panelcontrol_h5309j.png)
 
 
 And...**_That's all Folks._**
