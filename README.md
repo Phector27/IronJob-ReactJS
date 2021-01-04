@@ -3,7 +3,7 @@
 
 New ReactJS platform for contact between young talents who have studied at IronHack and companies interested in attracting new talent.
 
-Created by: **Héctor Carramiñana**.
+Created by: **Héctor Carramiñana** && **José Dorado**.
 
 A platform with three different accesses and registers:
 
