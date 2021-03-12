@@ -24,7 +24,7 @@ IronHack will be able to review offers, delete them and edit the permissions of 
 ## How to use/register 📋
 
 **1. Go to the private URL of platform:**
-[https://ironjob.com](https://bit.ly/3mKMXAS) 
+[https://ironjob.netlify.app/](https://ironjob.netlify.app/) 
 
 **2. Go to navbar and click on: Acceder/Regístrate**
 
@@ -57,7 +57,7 @@ A lightweight, modern and functional index page. This design shows the capabilit
 
 **5. Take a look for yourself:**
 
-### [Index Page](https://bit.ly/3mKMXAS)
+### [Index Page](https://ironjob.netlify.app/)
 
 ![Index](https://res.cloudinary.com/phector27/image/upload/v1608644136/cv-webuild/escritorio_ox7khv.png)
 
